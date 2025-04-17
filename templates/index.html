@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1C:Analizator - Управленческий учёт для селлеров маркетплейсов</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/components.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animations.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__wrapper">
+                <div class="logo">
+                    <a href="#" class="logo__link">
+                        <img src="{{ url_for('static', filename='img/logo.png') }}" alt="1C:Analizator" class="logo__img">
+                    </a>
+                </div>
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="#about" class="nav__link">О нас</a></li>
+                        <li class="nav__item"><a href="#advantages" class="nav__link">Преимущества</a></li>
+                        <li class="nav__item"><a href="#stages" class="nav__link">Этапы</a></li>
+                        <li class="nav__item"><a href="#services" class="nav__link">Услуги</a></li>
+                    </ul>
+                </nav>
+                <div class="header__contacts">
+                    <a href="tel:+78001234567" class="header__phone">8 (800) 123-45-67</a>
+                </div>
+                <button class="burger" aria-label="Открыть меню">
+                    <span class="burger__line"></span>
+                    <span class="burger__line"></span>
+                    <span class="burger__line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero__wrapper">
+                <div class="hero__content">
+                    <h1 class="hero__title">1C:Analizator - Управленческий учёт для селлеров маркетплейсов</h1>
+                    <p class="hero__subtitle">Учет доходов и расходов без лишних таблиц</p>
+                    <a href="#contact" class="btn btn--primary hero__btn">Получить консультацию</a>
+                </div>
+                <div class="hero__images">
+                    <div class="hero__icon-container">
+                        <img src="{{ url_for('static', filename='img/icon-doc.png') }}" alt="" class="hero__icon">
+                    </div>
+                    <div class="hero__icon-container">
+                        <img src="{{ url_for('static', filename='img/icon-chart.png') }}" alt="" class="hero__icon">
+                    </div>
+                    <div class="hero__icon-container">
+                        <img src="{{ url_for('static', filename='img/icon-folder.png') }}" alt="" class="hero__icon">
+                    </div>
+                    <div class="hero__logo-container">
+                        <img src="{{ url_for('static', filename='img/logo.png') }}" alt="1C:Analizator" class="hero__logo">
+                    </div>
+                    <div class="hero__icon-container">
+                        <img src="{{ url_for('static', filename='img/icon-settings.png') }}" alt="" class="hero__icon">
+                    </div>
+                    <div class="hero__icon-container">
+                        <img src="{{ url_for('static', filename='img/icon-dashboard.png') }}" alt="" class="hero__icon">
+                    </div>
+                    <div class="hero__icon-container">
+                        <img src="{{ url_for('static', filename='img/icon-report.png') }}" alt="" class="hero__icon">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="advantages" id="advantages">
+        <div class="container">
+            <div class="advantages__wrapper">
+                <h2 class="section-title white__title">Вы больше не теряетесь в таблицах и личных кабинетах — всё в одной системе:</h2>
+                <div class="advantages__grid">
+                    <div class="advantage-card">
+                        <div class="advantage-card__icon">
+                            <img src="{{ url_for('static', filename='img/icon-1.png') }}" alt="" class="advantage-card__img">
+                        </div>
+                        <h3 class="advantage-card__title">Финансовый учет</h3>
+                        <p class="advantage-card__desc">Автоматизация всех финансовых операций, связанных с продажами на маркетплейсах</p>
+                    </div>
+                    <div class="advantage-card">
+                        <div class="advantage-card__icon">
+                            <img src="{{ url_for('static', filename='img/icon-1.png') }}" alt="" class="advantage-card__img">
+                        </div>
+                        <h3 class="advantage-card__title">Складской учет</h3>
+                        <p class="advantage-card__desc">Контроль наличия товаров на складах маркетплейсов и в пути</p>
+                    </div>
+                    <div class="advantage-card">
+                        <div class="advantage-card__icon">
+                            <img src="{{ url_for('static', filename='img/icon-1.png') }}" alt="" class="advantage-card__img">
+                        </div>
+                        <h3 class="advantage-card__title">Аналитика продаж</h3>
+                        <p class="advantage-card__desc">Подробные отчеты по продажам, возвратам и прибыльности каждого товара</p>
+                    </div>
+                    <div class="advantage-card">
+                        <div class="advantage-card__icon">
+                            <img src="{{ url_for('static', filename='img/icon-1.png') }}" alt="" class="advantage-card__img">
+                        </div>
+                        <h3 class="advantage-card__title">Интеграция с API</h3>
+                        <p class="advantage-card__desc">Автоматическая синхронизация данных с популярными маркетплейсами</p>
+                    </div>
+                    <div class="advantage-card">
+                        <div class="advantage-card__icon">
+                            <img src="{{ url_for('static', filename='img/icon-1.png') }}" alt="" class="advantage-card__img">
+                        </div>
+                        <h3 class="advantage-card__title">Налоговая отчетность</h3>
+                        <p class="advantage-card__desc">Формирование документов для налоговой отчетности в несколько кликов</p>
+                    </div>
+                    <div class="advantage-card">
+                        <div class="advantage-card__icon">
+                            <img src="{{ url_for('static', filename='img/icon-1.png') }}" alt="" class="advantage-card__img">
+                        </div>
+                        <h3 class="advantage-card__title">Управление заказами</h3>
+                        <p class="advantage-card__desc">Контроль статусов заказов и автоматизация процессов обработки</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stages" id="stages">
+        <div class="container">
+            <h2 class="section-title">Этапы внедрения</h2>
+            <div class="stages__wrapper">
+                <div class="stages__img">
+                    <img src="{{ url_for('static', filename='img/team.png') }}" alt="Команда внедрения" class="stages__photo">
+                </div>
+                <div class="stages__content">
+                    <ol class="stages__list">
+                        <li class="stages__item">
+                            <span class="stages__number">1</span>
+                            <div class="stages__info">
+                                <h3 class="stages__title">Анализ и аудит бизнеса — 1 день</h3>
+                                <p class="stages__desc">Анализ вашей работы на маркетплейсах, определение основных бизнес-процессов</p>
+                            </div>
+                        </li>
+                        <li class="stages__item">
+                            <span class="stages__number">2</span>
+                            <div class="stages__info">
+                                <h3 class="stages__title">Установка и настройка — 2 дня</h3>
+                                <p class="stages__desc">Быстрая настройка системы, настройка интеграций с маркетплейсами</p>
+                            </div>
+                        </li>
+                        <li class="stages__item">
+                            <span class="stages__number">3</span>
+                            <div class="stages__info">
+                                <h3 class="stages__title">Перенос и загрузка данных — 3 дня</h3>
+                                <p class="stages__desc">Импортирование исторических данных из ваших таблиц и личных кабинетов</p>
+                            </div>
+                        </li>
+                        <li class="stages__item">
+                            <span class="stages__number">4</span>
+                            <div class="stages__info">
+                                <h3 class="stages__title">Обучение сотрудников — 2 дня</h3>
+                                <p class="stages__desc">Проведение обучения для вашей команды, подготовка инструкций</p>
+                            </div>
+                        </li>
+                        <li class="stages__item">
+                            <span class="stages__number">5</span>
+                            <div class="stages__info">
+                                <h3 class="stages__title">Сопровождение и поддержка — 3 недели</h3>
+                                <p class="stages__desc">Бесплатное сопровождение в первые недели использования системы</p>
+                            </div>
+                        </li>
+                    </ol>
+                    <div class="stages__result">
+                        <h3 class="stages__result-title">Полное внедрение всего за 30 дней</h3>
+                        <p class="stages__result-desc">Запустите автоматизированный учет для вашего бизнеса уже через месяц</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="experience" id="experience">
+        <div class="container">
+            <div class="experience__wrapper">
+                <h2 class="section-title white__title">Мы основываемся на личном опыте внедрения 1С</h2>
+                <p class="experience__subtitle">Никакой теории — только проверенные решения, через которые мы прошли сами.</p>
+                <div class="experience__container">
+                    <div class="experience__content">
+                        <div class="experience__card">
+                            <div class="experience__card-icon">🚀</div>
+                            <h3 class="experience__card-title">Внедрили себе 1С в 2018 году</h3>
+                            <p class="experience__card-desc">Внедряли с нуля, без готовых шаблонов — строили под свою реальность.</p>
+                        </div>
+                        <div class="experience__card">
+                            <div class="experience__card-icon">💰</div>
+                            <h3 class="experience__card-title">Потратили более 5 млн ₽ на ее доработку</h3>
+                            <p class="experience__card-desc">Прошли длинный путь от типовой конфигурации до точной настройки под бизнес.</p>
+                        </div>
+                        <div class="experience__card">
+                            <div class="experience__card-icon">🛠️</div>
+                            <h3 class="experience__card-title">Настроили 1С под реальные задачи связанные с производством и маркетплейсами</h3>
+                            <p class="experience__card-desc">1С работает с учетом складов, заказов, сборки, поставок, остатков — всё автоматизировано.</p>
+                        </div>
+                        <div class="experience__card">
+                            <div class="experience__card-icon">👨‍💻</div>
+                            <h3 class="experience__card-title">Построили подход, где объясняем каждый шаг и сопровождаем лично</h3>
+                            <p class="experience__card-desc">Каждое действие — с объяснением. Не "настроили и ушли", а ведем за руку и учим пользоваться.</p>
+                        </div>
+                    </div>
+                    <div class="experience__image">
+                        <div class="experience__image-placeholder">
+                            <img src="{{ url_for('static', filename='img/team_work.png') }}" alt="Наша команда за работой" class="experience__img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Полный список доработок</h2>
+            <div class="services__container">
+                <div class="services__list">
+                    <div class="service-item" data-service="nomenclature">
+                        <button class="service-button">
+                            Номенклатура
+                            <span class="arrow">›</span>
+                        </button>
+                        <div class="service-content">
+                            <div class="service-features">
+                                <p>Генерация уникального <strong>штрихкода номенклатуры</strong> с префиксом организации, например MP23052022. Используется для создания единого <strong>штрихкода для разных маркетплейсов</strong> (1)</p>
+                                
+                                <p>Хранение и печать дополнительных <strong>штрихкодов для разных маркетплейсов</strong>. Используется когда на каждом маркетплейсе используется свой UPC (0)</p>
+                                
+                                <p>Возможность автоматической привязки артикула номенклатуры по схеме <strong>Бренд + Модель + Цвет</strong> (3)</p>
+                                
+                                <p>Форма поиска использования номенклатуры в существующих спецификациях (2)</p>
+                                
+                                <p>Документы качества: хранение сертификатов соответствия и деклараций о соответствии в 1С с подробной информацией и "составом" документов. Автоматическая привязка сертификатов к номенклатуре по схеме <strong>"Производитель + Состав + Тип документа качества"</strong>. Возможность печати информации из сертификатов на этикетках на товары (3)</p>
+                            </div>
+                            <a href="#contact" class="service-order-btn">Заказать</a>
+                        </div>
+                    </div>
+                    <div class="service-item" data-service="production">
+                        <button class="service-button">
+                            Производство
+                            <span class="arrow">›</span>
+                        </button>
+                        <div class="service-content">
+                            <div class="service-features">
+                                <p>Создание и хранение технологических карт производства</p>
+                                <p>Автоматический расчет себестоимости по материалам</p>
+                                <p>Планирование производственных циклов</p>
+                                <p>Учет трудозатрат и распределение ресурсов</p>
+                                <p>Контроль качества на всех этапах производства</p>
+                            </div>
+                            <a href="#contact" class="service-order-btn">Заказать</a>
+                        </div>
+                    </div>
+                    <div class="service-item" data-service="warehouse">
+                        <button class="service-button">
+                            Склад
+                            <span class="arrow">›</span>
+                        </button>
+                        <div class="service-content">
+                            <div class="service-features">
+                                <p>Адресное хранение и автоматическое размещение товаров</p>
+                                <p>Инвентаризация с помощью мобильных терминалов</p>
+                                <p>Интеграция с WMS системами маркетплейсов</p>
+                                <p>Управление остатками и автоматические заказы</p>
+                                <p>Печать этикеток и формирование упаковочных листов</p>
+                            </div>
+                            <a href="#contact" class="service-order-btn">Заказать</a>
+                        </div>
+                    </div>
+                    <div class="service-item" data-service="sales">
+                        <button class="service-button">
+                            Продажи
+                            <span class="arrow">›</span>
+                        </button>
+                        <div class="service-content">
+                            <div class="service-features">
+                                <p>Автоматический импорт заказов с маркетплейсов</p>
+                                <p>Расчет комиссий и сопутствующих расходов</p>
+                                <p>Аналитика продаж по периодам и площадкам</p>
+                                <p>Мониторинг рейтинга товаров</p>
+                                <p>Работа с отзывами и возвратами</p>
+                            </div>
+                            <a href="#contact" class="service-order-btn">Заказать</a>
+                        </div>
+                    </div>
+                    <div class="service-item" data-service="purchases">
+                        <button class="service-button">
+                            Закупки
+                            <span class="arrow">›</span>
+                        </button>
+                        <div class="service-content">
+                            <div class="service-features">
+                                <p>Автоматическое формирование заказов поставщикам</p>
+                                <p>Контроль цен и условий поставки</p>
+                                <p>Планирование закупок на основе прогноза продаж</p>
+                                <p>Учет и контроль транспортных расходов</p>
+                                <p>Отслеживание статусов поставок</p>
+                            </div>
+                            <a href="#contact" class="service-order-btn">Заказать</a>
+                        </div>
+                    </div>
+                    <div class="service-item" data-service="personnel">
+                        <button class="service-button">
+                            Персонал
+                            <span class="arrow">›</span>
+                        </button>
+                        <div class="service-content">
+                            <div class="service-features">
+                                <p>Учет рабочего времени сотрудников</p>
+                                <p>Расчет заработной платы и премий</p>
+                                <p>Распределение задач и контроль выполнения</p>
+                                <p>KPI и эффективность работы</p>
+                                <p>Интеграция с HRM системами</p>
+                            </div>
+                            <a href="#contact" class="service-order-btn">Заказать</a>
+                        </div>
+                    </div>
+                    <div class="service-item" data-service="additional">
+                        <button class="service-button">
+                            Дополнительно
+                            <span class="arrow">›</span>
+                        </button>
+                        <div class="service-content">
+                            <div class="service-features">
+                                <p>Интеграция с банковскими сервисами</p>
+                                <p>Электронный документооборот</p>
+                                <p>Отчетность для контролирующих органов</p>
+                                <p>Настройка бизнес-процессов</p>
+                                <p>Резервное копирование и безопасность данных</p>
+                            </div>
+                            <a href="#contact" class="service-order-btn">Заказать</a>
+                        </div>
+                    </div>
+                    <div class="service-item" data-service="api">
+                        <button class="service-button">
+                            API
+                            <span class="arrow">›</span>
+                        </button>
+                        <div class="service-content">
+                            <div class="service-features">
+                                <p>Разработка API для интеграции с внешними системами</p>
+                                <p>Автоматический обмен данными с маркетплейсами</p>
+                                <p>Интеграция с CRM системами</p>
+                                <p>Синхронизация с мобильными приложениями</p>
+                                <p>Настройка веб-хуков для обновления данных</p>
+                            </div>
+                            <a href="#contact" class="service-order-btn">Заказать</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-modal">
+        <div class="service-modal__overlay"></div>
+        <div class="service-modal__content">
+            <button class="service-modal__close" aria-label="Закрыть">&#10005;</button>
+            <h3 class="service-modal__title"></h3>
+            <p class="service-modal__desc"></p>
+            <div class="service-modal__details">
+                <div class="service-modal__info">
+                    <span class="service-modal__label">Стоимость:</span>
+                    <span class="service-modal__price"></span>
+                </div>
+                <div class="service-modal__info">
+                    <span class="service-modal__label">Сроки:</span>
+                    <span class="service-modal__duration"></span>
+                </div>
+            </div>
+            <a href="/service/" class="btn btn--primary service-modal__btn">Заказать услугу</a>
+        </div>
+    </section>
+    
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2 class="section-title white__title">Стоимость</h2>
+            <div class="pricing__cards">
+                <div class="pricing-card">
+                    <h3 class="pricing-card__title">Аудит и анализ</h3>
+                    <div class="pricing-card__price">от 30 000 ₽</div>
+                    <p class="pricing-card__desc">Комплексный анализ бизнес-процессов и подготовка технического задания</p>
+                    <a href="#contact" class="btn btn--secondary pricing-card__btn">Заказать</a>
+                </div>
+                <div class="pricing-card pricing-card--featured">
+                    <h3 class="pricing-card__title">Внедрение и настройка</h3>
+                    <div class="pricing-card__price">от 80 000 ₽</div>
+                    <p class="pricing-card__desc">Установка, настройка и интеграция с маркетплейсами под ключ</p>
+                    <a href="#contact" class="btn btn--primary pricing-card__btn">Заказать</a>
+                </div>
+                <div class="pricing-card">
+                    <h3 class="pricing-card__title">Сопровождение</h3>
+                    <div class="pricing-card__price">от 15 000 ₽/мес</div>
+                    <p class="pricing-card__desc">Техническая поддержка, обновления и консультации</p>
+                    <a href="#contact" class="btn btn--secondary pricing-card__btn">Заказать</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="reviews" id="reviews">
+        <div class="container">
+            <h2 class="section-title white__title">Отзывы наших клиентов</h2>
+            <div class="reviews__slider">
+                <div class="reviews__track">
+                    <!-- Отзывы будут загружены динамически с помощью JavaScript -->
+                </div>
+                <div class="reviews__nav">
+                    <button class="reviews__btn reviews__btn--prev" aria-label="Предыдущий отзыв">&#10094;</button>
+                    <div class="reviews__dots"></div>
+                    <button class="reviews__btn reviews__btn--next" aria-label="Следующий отзыв">&#10095;</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta" id="contact">
+        <div class="container">
+            <div class="cta__wrapper">
+                <div class="cta__content">
+                    <h2 class="cta__title">Почему с Нами Лучше, Чем «Доработать Самому»?</h2>
+                    <div class="cta__advantages">
+                        <div class="cta__advantage">
+                            <h3 class="cta__advantage-title">Преимущества Готового Решения</h3>
+                            <ul class="cta__list">
+                                <li class="cta__item">Экономия времени и ресурсов компании</li>
+                                <li class="cta__item">Проверенные решения, которые работают</li>
+                                <li class="cta__item">Отсутствие скрытых ошибок и проблем</li>
+                            </ul>
+                        </div>
+                        <div class="cta__advantage">
+                            <h3 class="cta__advantage-title">Профессиональный сайт сразу</h3>
+                            <ul class="cta__list">
+                                <li class="cta__item">Экспертная поддержка специалистов</li>
+                                <li class="cta__item">Быстрый запуск и масштабирование</li>
+                                <li class="cta__item">Все необходимые интеграции и функционал</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="cta__form-wrap">
+                    <form class="cta__form" id="contactForm">
+                        <h3 class="cta__form-title">Оставьте заявку</h3>
+                        <div class="cta__form-group">
+                            <input type="text" class="cta__input" id="name" name="name" placeholder="Ваше имя" required>
+                        </div>
+                        <div class="cta__form-group">
+                            <input type="tel" class="cta__input" id="phone" name="phone" placeholder="Ваш телефон" required>
+                        </div>
+                        <div class="cta__form-group">
+                            <input type="email" class="cta__input" id="email" name="email" placeholder="Ваш email" required>
+                        </div>
+                        <div class="cta__form-group">
+                            <textarea class="cta__textarea" id="message" name="message" placeholder="Комментарий" rows="3"></textarea>
+                        </div>
+                        <div class="cta__form-group">
+                            <label class="cta__checkbox-label">
+                                <input type="checkbox" class="cta__checkbox" id="agreement" name="agreement" required>
+                                <span class="cta__checkbox-text">Я согласен с условиями обработки персональных данных</span>
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn--primary cta__submit">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__wrapper">
+                <div class="footer__column">
+                    <a href="#" class="footer__logo">
+                        <img src="{{ url_for('static', filename='img/logo-light.png') }}" alt="1C:Analizator" class="footer__logo-img">
+                    </a>
+                    <p class="footer__copyright">© 2024 1C:Analizator. Все права защищены.</p>
+                </div>
+                <div class="footer__column">
+                    <h4 class="footer__title">Навигация</h4>
+                    <ul class="footer__menu">
+                        <li class="footer__menu-item"><a href="#about" class="footer__link">О нас</a></li>
+                        <li class="footer__menu-item"><a href="#advantages" class="footer__link">Преимущества</a></li>
+                        <li class="footer__menu-item"><a href="#services" class="footer__link">Услуги</a></li>
+                        <li class="footer__menu-item"><a href="#pricing" class="footer__link">Стоимость</a></li>
+                    </ul>
+                </div>
+                <div class="footer__column">
+                    <h4 class="footer__title">Контакты</h4>
+                    <address class="footer__address">
+                        <p class="footer__contact">г. Москва, ул. Примерная, д. 123</p>
+                        <a href="tel:+78001234567" class="footer__link">8 (800) 123-45-67</a>
+                        <a href="mailto:info@1c-analizator.ru" class="footer__link">info@1c-analizator.ru</a>
+                    </address>
+                </div>
+                <div class="footer__column">
+                    <h4 class="footer__title">Соцсети</h4>
+                    <div class="footer__socials">
+                        <a href="#" class="footer__social" aria-label="ВКонтакте">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15.07 2H8.93C3.33 2 2 3.33 2 8.93V15.07C2 20.67 3.33 22 8.93 22H15.07C20.67 22 22 20.67 22 15.07V8.93C22 3.33 20.67 2 15.07 2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M16.12 16.12C13.5 18.74 9.5 18.74 6.88 16.12C4.26 13.5 4.26 9.5 6.88 6.88C9.5 4.26 13.5 4.26 16.12 6.88C18.74 9.5 18.74 13.5 16.12 16.12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="footer__social" aria-label="Telegram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18.47 4.05C18.47 4.05 20.25 3.3 20.16 5.04C20.13 5.79 19.64 8.46 19.25 11.38L18.13 18.06C18.13 18.06 18.04 19.12 17.25 19.3C16.46 19.48 15.28 18.62 15.07 18.44C14.9 18.31 11.63 16.21 10.4 15.13C10.13 14.9 9.82 14.42 10.44 13.88C12.06 12.37 14.04 10.47 15.26 9.26C15.8 8.72 16.34 7.44 14.04 8.9L7.75 13.01C7.75 13.01 7.02 13.48 5.95 13.17C4.88 12.86 3.66 12.46 3.66 12.46C3.66 12.46 2.54 11.79 4.36 11.1L15.25 6.94C15.25 6.94 17.34 5.98 18.47 4.05Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="footer__social" aria-label="YouTube">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17 20H7C4 20 2 18 2 15V9C2 6 4 4 7 4H17C20 4 22 6 22 9V15C22 18 20 20 17 20Z" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M11.4 9.5L13.9 11L11.4 12.5V9.5Z" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html> 
