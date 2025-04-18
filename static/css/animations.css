@@ -163,6 +163,7 @@
     
     .nav__list {
         flex-direction: column;
+        display: flex;
     }
     
     .nav__item:not(:last-child) {

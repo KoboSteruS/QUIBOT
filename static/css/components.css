@@ -16,6 +16,7 @@
 .advantages {
     padding: 80px 0;
     background-color: #292F3A;
+    color: white;
 }
 
 .advantages__grid {
@@ -58,19 +59,19 @@
 .advantage-card__title {
     font-size: 20px;
     font-weight: 600;
-    color: var(--color-primary);
+    color: #181E2A;
     margin-bottom: 15px;
 }
 
 .advantage-card__desc {
     font-size: 16px;
-    color: var(--color-text);
+    color: #333;
 }
 
 /* Stages section */
 .stages {
     padding: 80px 0;
-    background-color: #ffffff;
+    background-color: #25304A;
     color: white;
 }
 
@@ -127,13 +128,13 @@
 .stages__title {
     font-size: 18px;
     font-weight: 600;
-    color: rgb(0, 0, 0);
+    color: white;
     margin-bottom: 10px;
 }
 
 .stages__desc {
     font-size: 16px;
-    color: rgba(0, 0, 0, 0.8);
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .stages__result {
@@ -267,8 +268,7 @@
 /* Services section */
 .services {
     padding: 80px 0;
-    background-color: var(--color-bg-light);
-    position: relative;
+    background-color: #F5F8FA;
 }
 
 .services__container {
@@ -292,43 +292,34 @@
 }
 
 .service-button {
-    background-color: #181E2A;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    padding: 15px 20px;
-    font-size: 16px;
-    font-weight: 500;
-    cursor: pointer;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    transition: all 0.3s ease;
-    text-align: left;
-    width: 100%;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: var(--transition);
 }
 
 .service-button:hover {
-    opacity: 0.95;
-    transform: translateY(-1px);
-    background-color: #222944;
+    background-color: #25304A;
+    color: white;
 }
 
-.service-button .arrow {
-    font-size: 20px;
-    font-weight: 300;
-    transition: transform 0.3s ease;
+.service-button:hover .service-button__icon {
+    color: white;
 }
 
-.service-item.active .service-button .arrow {
-    transform: rotate(90deg);
+.service-button.active {
+    background-color: #25304A;
+    color: white;
 }
 
-.service-item.active .service-button {
-    border-radius: 10px 10px 0 0;
-    margin-bottom: 0;
-    background-color: #4F96FF;
+.service-button.active .service-button__icon {
+    color: white;
 }
 
 .service-content {
@@ -535,73 +526,145 @@
 
 /* Pricing section */
 .pricing {
+    background-color: var(--color-bg);
     padding: 80px 0;
-    background-color: #292F3A;
 }
 
-.pricing__cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+.pricing__title {
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 15px;
+    color: var(--color-primary);
+}
+
+.pricing__desc {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px;
+    color: var(--color-text-light);
+}
+
+.pricing-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 30px;
-    margin-top: 60px;
 }
 
 .pricing-card {
     background-color: var(--color-bg-light);
-    border-radius: 12px;
-    padding: 40px 30px;
+    border-radius: 10px;
     box-shadow: var(--shadow-card);
-    transition: var(--transition);
-    display: flex;
-    flex-direction: column;
+    padding: 30px;
+    width: 320px;
+    transition: transform 0.3s ease;
 }
 
 .pricing-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transform: translateY(-10px);
 }
 
-.pricing-card__name {
-    font-size: 24px;
+.pricing-card--highlighted {
+    background-color: var(--color-primary);
+    color: white;
+    position: relative;
+}
+
+.pricing-card--highlighted .pricing-card__title,
+.pricing-card--highlighted .pricing-card__price,
+.pricing-card--highlighted .pricing-card__period,
+.pricing-card--highlighted .pricing-card__features-item {
+    color: white;
+}
+
+.pricing-card--highlighted .pricing-card__badge {
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    background-color: var(--color-secondary);
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 5px 15px;
+    border-radius: 20px;
+}
+
+.pricing-card__title {
+    font-size: 22px;
     font-weight: 700;
-    color: var(--color-primary);
     margin-bottom: 15px;
+    color: var(--color-primary);
 }
 
 .pricing-card__price {
-    font-size: 48px;
+    font-size: 36px;
     font-weight: 700;
-    color: var(--color-accent);
-    margin-bottom: 20px;
+    margin-bottom: 5px;
+    color: var(--color-primary);
 }
 
-.pricing-card__price span {
-    font-size: 16px;
+.pricing-card__period {
+    font-size: 14px;
     color: var(--color-text-light);
+    margin-bottom: 20px;
+    display: block;
 }
 
 .pricing-card__features {
-    margin-bottom: 30px;
-    flex-grow: 1;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 25px;
 }
 
-.pricing-card__feature {
+.pricing-card__features-item {
+    padding: 8px 0;
     display: flex;
-    align-items: flex-start;
-    margin-bottom: 15px;
+    align-items: center;
+    color: var(--color-text);
 }
 
-.pricing-card__feature-icon {
+.pricing-card__features-item:before {
+    content: "✓";
     color: var(--color-secondary);
-    margin-right: 15px;
-    flex-shrink: 0;
-    margin-top: 3px;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.pricing-card__features-item--disabled {
+    color: var(--color-text-light);
+    text-decoration: line-through;
+}
+
+.pricing-card__features-item--disabled:before {
+    content: "✕";
+    color: #e74c3c;
+}
+
+.pricing-card__button {
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+
+.pricing-card__button.btn-highlighted {
+    background-color: #F5F8FA;
+    color: var(--color-primary);
+    border: none;
+    font-weight: 600;
+}
+
+.pricing-card__button.btn-highlighted:hover {
+    background-color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.25);
 }
 
 /* Reviews section */
 .reviews {
     padding: 80px 0;
-    background-color: #292F3A;
+    background-color: #181E2A;
+    color: white;
 }
 
 .reviews__slider {
@@ -617,63 +680,40 @@
 }
 
 .review-card {
-    background-color: #fff;
-    border-radius: 12px;
-    padding: 30px;
-    box-shadow: var(--shadow-card);
-    margin: 20px 15px;
-    flex: 0 0 100%;
-    box-sizing: border-box;
-    width: 100%;
-}
-
-.review-card__header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    background-color: #25304A;
+    border-radius: 10px;
+    padding: 25px;
     margin-bottom: 20px;
-}
-
-.review-card__info {
-    flex-grow: 1;
-}
-
-.review-card__name {
-    font-size: 18px;
-    font-weight: 600;
-    color: var(--color-primary);
-    margin-bottom: 5px;
-}
-
-.review-card__position {
-    font-size: 14px;
-    color: var(--color-text-light);
-    margin-bottom: 5px;
-}
-
-.review-card__company {
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--color-text);
-}
-
-.review-card__rating {
-    color: #FFD700;
-    font-size: 18px;
-    margin-bottom: 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .review-card__text {
-    color: var(--color-text);
-    font-size: 16px;
-    line-height: 1.6;
-    margin-bottom: 20px;
+    color: #F5F8FA;
+    font-style: italic;
+    margin-bottom: 15px;
 }
 
-.review-card__date {
+.review-card__author {
+    display: flex;
+    align-items: center;
+}
+
+.review-card__author-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.review-card__author-name {
+    font-weight: 600;
+    color: white;
+}
+
+.review-card__author-company {
     font-size: 14px;
-    color: var(--color-text-light);
-    text-align: right;
+    color: #ccc;
 }
 
 .reviews__nav {
@@ -714,7 +754,8 @@
 /* CTA section */
 .cta {
     padding: 80px 0;
-    background-color: var(--color-bg);
+    background-color: #F5F8FA;
+    text-align: center;
 }
 
 .cta__wrapper {
@@ -837,9 +878,9 @@
 
 /* Footer */
 .footer {
-    padding: 60px 0 30px;
     background-color: #181E2A;
-    color: #fff;
+    color: white;
+    padding: 60px 0 30px;
 }
 
 .footer__wrapper {
@@ -918,6 +959,12 @@
 .footer__social:hover {
     background-color: var(--color-secondary);
     color: #fff;
+}
+
+.footer-bottom {
+    padding-top: 30px;
+    margin-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Responsive styles */

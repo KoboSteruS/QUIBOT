@@ -1,14 +1,14 @@
 /* Base styles */
 :root {
-    --color-primary: #0056b3;
-    --color-secondary: #00a86b;
-    --color-accent: #f39c12;
-    --color-text: #2c3e50;
-    --color-text-light: #6c757d;
-    --color-bg: #fff;
-    --color-bg-light: #f8f9fa;
-    --color-bg-dark: #0056b3;
-    --color-border: #dee2e6;
+    --color-primary: #25304A;
+    --color-secondary: #3AC084;
+    --color-accent: #4F96FF;
+    --color-text: #333333;
+    --color-text-light: #666666;
+    --color-bg: #ffffff;
+    --color-bg-light: #F5F8FA;
+    --color-bg-dark: #181E2A;
+    --color-border: #E4E7EC;
     --shadow-card: 0 5px 15px rgba(0, 0, 0, 0.08);
     --font-family: 'Montserrat', sans-serif;
     --container-width: 1280px;
@@ -116,47 +116,73 @@ input, textarea, select {
     position: sticky;
     top: 0;
     left: 0;
-    width: 100%;
-    background-color: #252525;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    z-index: 100;
+    right: 0;
+    background-color: rgba(24, 30, 42, 0.9);
+    backdrop-filter: blur(10px);
     padding: 15px 0;
+    z-index: 100;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+}
+
+.header.scrolled {
+    padding: 10px 0;
+    background-color: rgba(24, 30, 42, 0.95);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
 }
 
 .header__wrapper {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
 }
 
 .logo__link {
-    display: block;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
 }
 
 .logo__img {
-    max-height: 40px;
+    height: 40px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
 }
 
 .nav__list {
     display: flex;
-}
-
-.nav__item:not(:last-child) {
-    margin-right: 30px;
+    align-items: center;
+    gap: 30px;
+    margin: 0;
 }
 
 .nav__link {
-    color: #fff;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 16px;
     font-weight: 500;
+    text-decoration: none;
+    transition: var(--transition);
     position: relative;
-    padding-bottom: 5px;
+    padding: 5px 0;
+}
+
+.nav__link:hover {
+    color: var(--color-secondary);
 }
 
 .nav__link::after {
-    content: '';
+    content: "";
     position: absolute;
-    left: 0;
     bottom: 0;
+    left: 0;
     width: 0;
     height: 2px;
     background-color: var(--color-secondary);
@@ -167,38 +193,79 @@ input, textarea, select {
     width: 100%;
 }
 
+.header__contacts {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 20px;
+}
+
 .header__phone {
     color: #fff;
+    font-size: 16px;
     font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.header__phone:hover {
+    color: var(--color-secondary);
 }
 
 .burger {
     display: none;
-    background: none;
-    border: none;
     flex-direction: column;
     justify-content: space-between;
     width: 30px;
     height: 20px;
+    cursor: pointer;
 }
 
 .burger__line {
     width: 100%;
     height: 2px;
-    background-color: var(--color-primary);
+    background-color: #fff;
     transition: var(--transition);
 }
 
 /* Hero section */
 .hero {
     padding: 80px 0;
-    background-color: #292F3A;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-bg-dark) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: rgba(58, 192, 132, 0.1);
+    z-index: 1;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: -80px;
+    left: -80px;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: rgba(79, 150, 255, 0.08);
+    z-index: 1;
 }
 
 .hero__wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    z-index: 2;
 }
 
 .hero__content {
@@ -210,17 +277,32 @@ input, textarea, select {
     font-weight: 700;
     color: #fff;
     margin-bottom: 20px;
+    line-height: 1.2;
 }
 
 .hero__subtitle {
     font-size: 20px;
-    color: #fff;
+    color: rgba(255, 255, 255, 0.9);
     margin-bottom: 30px;
+    max-width: 90%;
 }
 
 .hero__btn {
     padding: 15px 40px;
     font-size: 18px;
+    background-color: var(--color-secondary);
+    color: #fff;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    transition: var(--transition);
+    box-shadow: 0 5px 15px rgba(58, 192, 132, 0.3);
+}
+
+.hero__btn:hover {
+    background-color: #2da76f;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(58, 192, 132, 0.4);
 }
 
 .hero__images {
@@ -342,6 +424,10 @@ input, textarea, select {
         display: flex;
     }
     
+    .header__phone {
+        font-size: 14px;
+    }
+    
     .hero__wrapper {
         flex-direction: column;
     }
@@ -349,7 +435,6 @@ input, textarea, select {
     .hero__content,
     .hero__images {
         flex: 0 0 100%;
-        text-align: center;
         margin-bottom: 40px;
     }
     
@@ -358,29 +443,26 @@ input, textarea, select {
     }
     
     .hero__icon-container {
-        width: 50px;
-        height: 50px;
-    }
-    
-    .hero__icon {
-        width: 25px;
-        height: 25px;
+        display: none;
     }
     
     .hero__logo-container {
-        width: 100px;
-        height: 100px;
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        margin: 0 auto;
     }
     
     .hero__logo {
-        width: 70px;
-        height: 70px;
+        width: 60px;
+        height: 60px;
     }
 }
 
 @media (max-width: 480px) {
     .hero__title {
-        font-size: 26px;
+        font-size: 24px;
     }
     
     .hero__subtitle {
@@ -388,11 +470,20 @@ input, textarea, select {
     }
     
     .hero__btn {
-        padding: 12px 30px;
+        padding: 12px 25px;
         font-size: 16px;
     }
     
     .section-title {
-        font-size: 26px;
+        font-size: 24px;
+    }
+    
+    .header__phone {
+        font-size: 0;
+    }
+    
+    .header__phone::before {
+        content: "📞";
+        font-size: 18px;
     }
 }
