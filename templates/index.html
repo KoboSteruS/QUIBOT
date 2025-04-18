@@ -18,8 +18,8 @@
             <div class="header__wrapper">
                 <div class="logo">
                     <a href="#" class="logo__link">
-                        <img src="{{ url_for('static', filename='img/logo.png') }}" alt="1C:Analizator" class="logo__img">
-                        1c:analizator
+                        <img src="{{ url_for('static', filename='img/logo.png') }}" alt="1С:Analizator" class="logo__img">
+                        <h2>1С:Analizator</h2>
                     </a>
                 </div>
                 <nav class="nav">
@@ -83,7 +83,7 @@
         </div>
     </section>
 
-    <section class="advantages" id="advantages">
+    <section class="advantages section-dark-bg" id="advantages">
         <div class="container">
             <div class="advantages__wrapper">
                 <h2 class="section-title white__title">Вы больше не теряетесь в таблицах и личных кабинетах — всё в одной системе:</h2>
@@ -92,50 +92,79 @@
                         <div class="advantage-card__icon">
                             <img src="{{ url_for('static', filename='img/icon-1.png') }}" alt="" class="advantage-card__img">
                         </div>
-                        <h3 class="advantage-card__title">Финансовый учет</h3>
-                        <p class="advantage-card__desc">Автоматизация всех финансовых операций, связанных с продажами на маркетплейсах</p>
+                        <h3 class="advantage-card__title">Финансы</h3>
+                        <ul class="advantage-card__list" style="list-style-type:decimal;color: black;">
+                            <li>Финансовые отчёты: PnL, ДДС, Баланс</li>
+                            <li>Учёт денежных средств в разрезе касс и расчётных счетов</li>
+                            <li>Учет валютных операций и курсовых разниц</li>
+                            <li>Управление взаиморасчётами с контрагентами</li>
+                        </ul>
                     </div>
                     <div class="advantage-card">
                         <div class="advantage-card__icon">
                             <img src="{{ url_for('static', filename='img/icon-1.png') }}" alt="" class="advantage-card__img">
                         </div>
                         <h3 class="advantage-card__title">Складской учет</h3>
-                        <p class="advantage-card__desc">Контроль наличия товаров на складах маркетплейсов и в пути</p>
+                        <ul class="advantage-card__list" style="list-style-type: decimal;color: black;">
+                            <li>Учёт остатков по складам</li>
+                            <li>Резервирование товаров</li>
+                            <li>Инвентаризация</li>
+                            <li>Работа по FBS</li>
+                        </ul>
                     </div>
                     <div class="advantage-card">
                         <div class="advantage-card__icon">
                             <img src="{{ url_for('static', filename='img/icon-1.png') }}" alt="" class="advantage-card__img">
                         </div>
-                        <h3 class="advantage-card__title">Аналитика продаж</h3>
-                        <p class="advantage-card__desc">Подробные отчеты по продажам, возвратам и прибыльности каждого товара</p>
+                        <h3 class="advantage-card__title">Интеграции и API</h3>
+                        <ul class="advantage-card__list" style="list-style-type: decimal;color: black;">
+                            <li>Автоматическая загрузка отчетов реализации (WB, Ozon)</li>
+                            <li>API для сайтов и мобильных приложений</li>
+                            <li>Автоматическая загрузка выписок из банков</li>
+                        </ul>
                     </div>
                     <div class="advantage-card">
                         <div class="advantage-card__icon">
                             <img src="{{ url_for('static', filename='img/icon-1.png') }}" alt="" class="advantage-card__img">
                         </div>
-                        <h3 class="advantage-card__title">Интеграция с API</h3>
-                        <p class="advantage-card__desc">Автоматическая синхронизация данных с популярными маркетплейсами</p>
+                        <h3 class="advantage-card__title">Честный Знак</h3>
+                        <ul class="advantage-card__list" style="list-style-type: decimal;color: black;">
+                            <li>Ввод в оборот, отгрузка и списание маркированных товаров</li>
+                            <li>Повторная печать КИЗов</li>
+                            <li>Проверка КИЗов при отгрузке</li>
+                            <li>Печать QR кода и инфо о товаре на одной этикетке</li>
+                        </ul>
                     </div>
                     <div class="advantage-card">
                         <div class="advantage-card__icon">
                             <img src="{{ url_for('static', filename='img/icon-1.png') }}" alt="" class="advantage-card__img">
                         </div>
-                        <h3 class="advantage-card__title">Налоговая отчетность</h3>
-                        <p class="advantage-card__desc">Формирование документов для налоговой отчетности в несколько кликов</p>
+                        <h3 class="advantage-card__title">Производство</h3>
+                        <ul class="advantage-card__list" style="list-style-type: decimal;color: black;">
+                            <li>Расчёт себестоимости</li>
+                            <li>Сдельные наряды</li>
+                            <li>Работа с аутсорсом (в т.ч. на давальческом сырье)</li>
+                            <li>Учёт полуфабрикатов</li>
+                        </ul>
                     </div>
                     <div class="advantage-card">
                         <div class="advantage-card__icon">
                             <img src="{{ url_for('static', filename='img/icon-1.png') }}" alt="" class="advantage-card__img">
                         </div>
-                        <h3 class="advantage-card__title">Управление заказами</h3>
-                        <p class="advantage-card__desc">Контроль статусов заказов и автоматизация процессов обработки</p>
+                        <h3 class="advantage-card__title">Мультиаккаунтность</h3>
+                        <ul class="advantage-card__list" style="list-style-type: decimal;color: black;">
+                            <li>Работа с несколькими ЛК на разных ЮЛ</li>
+                            <li>Поддержка разных ШК (Баркод) для разных ЛК</li>
+                            <li>Хранение сертификатов качества и соответствия</li>
+                            <li>Аналитика в разрезе ЮЛ, Бренда, Артикула</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="stages" id="stages">
+    <section class="stages section-light-bg " id="stages">
         <div class="container">
             <h2 class="section-title"><span class="highlighted-number">5</span> простых шагов для внедрения</h2>
             <div class="stages__wrapper">
@@ -188,7 +217,7 @@
         </div>
     </section>
 
-    <section class="experience" id="experience">
+    <section class="experience section-dark-bg" id="experience">
         <div class="container">
             <div class="experience__wrapper">
                 <h2 class="section-title white__title">Мы основываемся на личном опыте внедрения 1С</h2>
@@ -222,7 +251,7 @@
         </div>
     </section>
 
-    <section class="services" id="services">
+    <section class="services section-light-bg " id="services">
         <div class="container">
             <h2 class="section-title">Полный список доработок</h2>
             <div class="services__container">
@@ -359,7 +388,7 @@
         </div>
     </section>
 
-    <section class="service-modal">
+    <section class="service-modal section-light-bg ">
         <div class="service-modal__overlay"></div>
         <div class="service-modal__content">
             <button class="service-modal__close" aria-label="Закрыть">&#10005;</button>
@@ -379,7 +408,7 @@
         </div>
     </section>
 
-    <section class="cta" id="contact">
+    <section class="cta section-dark-bg" id="contact">
         <div class="container">
             <div class="cta__wrapper">
                 <div class="cta__content">
@@ -409,7 +438,7 @@
     
 
     <!-- Блок с тарифами -->
-    <section class="pricing" id="pricing">
+    <section class="pricing section-light-bg " id="pricing">
         <div class="container">
             <h2 class="pricing__title">Тарифные планы</h2>
             <p class="pricing__desc">Выберите оптимальный план для вашего бизнеса, который лучше всего соответствует вашим потребностям</p>
