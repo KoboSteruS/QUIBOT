@@ -182,4 +182,42 @@ document.addEventListener('DOMContentLoaded', function() {
     
     window.addEventListener('scroll', checkElements);
     checkElements(); // Check on initial load
+    
+    // Отрисовка линий между иконками и центральным логотипом
+    function drawLines() {
+        const centerLogo = document.getElementById('center-logo');
+        if (!centerLogo) return;
+        
+        const centerX = centerLogo.offsetLeft + centerLogo.offsetWidth / 2;
+        const centerY = centerLogo.offsetTop + centerLogo.offsetHeight / 2;
+        
+        for (let i = 1; i <= 6; i++) {
+            const icon = document.getElementById('icon' + i);
+            const line = document.getElementById('line' + i);
+            
+            if (icon && line) {
+                const iconX = icon.offsetLeft + icon.offsetWidth / 2;
+                const iconY = icon.offsetTop + icon.offsetHeight / 2;
+                
+                line.setAttribute('x1', centerX);
+                line.setAttribute('y1', centerY);
+                line.setAttribute('x2', iconX);
+                line.setAttribute('y2', iconY);
+                
+                // Добавляем класс для плавного появления линии
+                setTimeout(() => {
+                    line.classList.add('animated');
+                }, 300 * i);
+            }
+        }
+    }
+    
+    // Перерисовка линий при изменении размера окна
+    window.addEventListener('resize', drawLines);
+    
+    // Запускаем отрисовку линий после загрузки страницы
+    window.addEventListener('load', drawLines);
+    
+    // Выполняем первичную отрисовку после загрузки DOM
+    setTimeout(drawLines, 500);
 }); 

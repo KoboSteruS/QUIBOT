@@ -19,6 +19,7 @@
                 <div class="logo">
                     <a href="#" class="logo__link">
                         <img src="{{ url_for('static', filename='img/logo.png') }}" alt="1C:Analizator" class="logo__img">
+                        1c:analizator
                     </a>
                 </div>
                 <nav class="nav">
@@ -30,9 +31,6 @@
                         <li class="nav__item"><a href="#pricing" class="nav__link">Тарифы</a></li>
                     </ul>
                 </nav>
-                <div class="header__contacts">
-                    <a href="tel:+78001234567" class="header__phone">8 (800) 123-45-67</a>
-                </div>
                 <button class="burger" aria-label="Открыть меню">
                     <span class="burger__line"></span>
                     <span class="burger__line"></span>
@@ -51,27 +49,35 @@
                     <a href="#contact" class="btn btn--primary hero__btn">Получить консультацию</a>
                 </div>
                 <div class="hero__images">
-                    <div class="hero__icon-container">
+                    <div class="hero__icon-container" id="icon1">
                         <img src="{{ url_for('static', filename='img/icon-doc.png') }}" alt="" class="hero__icon">
                     </div>
-                    <div class="hero__icon-container">
+                    <div class="hero__icon-container" id="icon2">
                         <img src="{{ url_for('static', filename='img/icon-chart.png') }}" alt="" class="hero__icon">
                     </div>
-                    <div class="hero__icon-container">
+                    <div class="hero__icon-container" id="icon3">
                         <img src="{{ url_for('static', filename='img/icon-folder.png') }}" alt="" class="hero__icon">
                     </div>
-                    <div class="hero__logo-container">
+                    <div class="hero__logo-container" id="center-logo">
                         <img src="{{ url_for('static', filename='img/logo.png') }}" alt="1C:Analizator" class="hero__logo">
                     </div>
-                    <div class="hero__icon-container">
+                    <div class="hero__icon-container" id="icon4">
                         <img src="{{ url_for('static', filename='img/icon-settings.png') }}" alt="" class="hero__icon">
                     </div>
-                    <div class="hero__icon-container">
+                    <div class="hero__icon-container" id="icon5">
                         <img src="{{ url_for('static', filename='img/icon-dashboard.png') }}" alt="" class="hero__icon">
                     </div>
-                    <div class="hero__icon-container">
+                    <div class="hero__icon-container" id="icon6">
                         <img src="{{ url_for('static', filename='img/icon-report.png') }}" alt="" class="hero__icon">
                     </div>
+                    <svg class="hero__lines" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                        <line id="line1" x1="0" y1="0" x2="0" y2="0" stroke="rgba(255,255,255,0.6)" stroke-width="2" />
+                        <line id="line2" x1="0" y1="0" x2="0" y2="0" stroke="rgba(255,255,255,0.6)" stroke-width="2" />
+                        <line id="line3" x1="0" y1="0" x2="0" y2="0" stroke="rgba(255,255,255,0.6)" stroke-width="2" />
+                        <line id="line4" x1="0" y1="0" x2="0" y2="0" stroke="rgba(255,255,255,0.6)" stroke-width="2" />
+                        <line id="line5" x1="0" y1="0" x2="0" y2="0" stroke="rgba(255,255,255,0.6)" stroke-width="2" />
+                        <line id="line6" x1="0" y1="0" x2="0" y2="0" stroke="rgba(255,255,255,0.6)" stroke-width="2" />
+                    </svg>
                 </div>
             </div>
         </div>
@@ -176,7 +182,6 @@
                     </ol>
                     <div class="stages__result">
                         <h3 class="stages__result-title">Полное внедрение всего за <span class="highlighted-number">30</span> дней</h3>
-                        <p class="stages__result-desc">Запустите автоматизированный учет для вашего бизнеса уже через месяц</p>
                     </div>
                 </div>
             </div>

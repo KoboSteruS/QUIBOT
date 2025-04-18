@@ -143,17 +143,17 @@ input, textarea, select {
 }
 
 .logo__link {
+    color: #fff;
     display: flex;
     align-items: center;
     text-decoration: none;
 }
 
 .logo__img {
-    height: 40px;
+    height: 50px;
 }
 
 .nav {
-    margin-left: 200px;
     display: flex;
     align-items: center;
 }
@@ -273,7 +273,7 @@ input, textarea, select {
 }
 
 .hero__content {
-    flex: 0 0 50%;
+    flex: 0 0 40%;
     animation: fadeInUp 1s ease-out;
 }
 
@@ -313,10 +313,31 @@ input, textarea, select {
 }
 
 .hero__images {
-    flex: 0 0 45%;
+    flex: 0 0 55%;
     position: relative;
-    height: 350px;
+    height: 500px;
     animation: fadeIn 1.5s ease-out;
+}
+
+.hero__lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.hero__lines line {
+    stroke-dasharray: 300;
+    stroke-dashoffset: 300;
+    transition: stroke-dashoffset 1.5s ease;
+    opacity: 0.7;
+}
+
+.hero__lines line.animated {
+    stroke-dashoffset: 0;
 }
 
 @keyframes fadeIn {
@@ -330,8 +351,8 @@ input, textarea, select {
 
 .hero__icon-container {
     position: absolute;
-    width: 60px;
-    height: 60px;
+    width: 100px;
+    height: 100px;
     background-color: rgba(255, 255, 255, 0.95);
     border-radius: 12px;
     display: flex;
@@ -341,6 +362,7 @@ input, textarea, select {
     animation: float 3s ease-in-out infinite;
     transition: all 0.3s ease;
     backdrop-filter: blur(5px);
+    z-index: 3;
 }
 
 .hero__icon-container:hover {
@@ -348,56 +370,56 @@ input, textarea, select {
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
-.hero__icon-container:nth-child(1) {
-    top: 40px;
-    left: 20px;
+#icon1 {
+    top: 30px;
+    left: 30px;
     animation-delay: 0.2s;
 }
 
-.hero__icon-container:nth-child(2) {
+#icon2 {
     top: 20px;
-    right: 60px;
+    right: 120px;
     animation-delay: 0.4s;
 }
 
-.hero__icon-container:nth-child(3) {
-    top: 120px;
-    left: 0;
+#icon3 {
+    top: 150px;
+    left: 10px;
     animation-delay: 0.6s;
 }
 
-.hero__icon-container:nth-child(5) {
-    bottom: 120px;
-    right: 20px;
+#icon4 {
+    bottom: 150px;
+    right: 40px;
     animation-delay: 0.8s;
 }
 
-.hero__icon-container:nth-child(6) {
-    bottom: 40px;
-    left: 60px;
+#icon5 {
+    bottom: 60px;
+    left: 80px;
     animation-delay: 1s;
 }
 
-.hero__icon-container:nth-child(7) {
-    bottom: 20px;
-    right: 80px;
+#icon6 {
+    bottom: 30px;
+    right: 140px;
     animation-delay: 1.2s;
 }
 
 .hero__logo-container {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 30%;
+    left: 40%;
     transform: translate(-50%, -50%);
-    width: 120px;
-    height: 120px;
+    width: 160px;
+    height: 160px;
     background-color: rgba(37, 48, 74, 0.9);
-    border-radius: 60px;
+    border-radius: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-    z-index: 2;
+    z-index: 4;
     animation: pulse 3s ease-in-out infinite;
 }
 
@@ -417,8 +439,8 @@ input, textarea, select {
 }
 
 .hero__icon {
-    width: 30px;
-    height: 30px;
+    width: 80px;
+    height: 80px;
     object-fit: contain;
     transition: transform 0.3s ease;
 }
@@ -428,8 +450,8 @@ input, textarea, select {
 }
 
 .hero__logo {
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
     object-fit: contain;
     filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.2));
 }
@@ -470,6 +492,10 @@ input, textarea, select {
     .hero__subtitle {
         font-size: 18px;
     }
+    
+    .hero__images {
+        height: 450px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -492,28 +518,18 @@ input, textarea, select {
     .hero__content,
     .hero__images {
         flex: 0 0 100%;
-        margin-bottom: 40px;
+    }
+    
+    .hero__content {
+        margin-bottom: 60px;
+    }
+    
+    .hero__images {
+        height: 400px;
     }
     
     .hero__title {
         font-size: 30px;
-    }
-    
-    .hero__icon-container {
-        display: none;
-    }
-    
-    .hero__logo-container {
-        position: relative;
-        top: 0;
-        left: 0;
-        transform: none;
-        margin: 0 auto;
-    }
-    
-    .hero__logo {
-        width: 60px;
-        height: 60px;
     }
 }
 
@@ -535,12 +551,27 @@ input, textarea, select {
         font-size: 24px;
     }
     
-    .header__phone {
-        font-size: 0;
+    .hero__images {
+        height: 350px;
     }
     
-    .header__phone::before {
-        content: "📞";
-        font-size: 18px;
+    .hero__icon-container {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .hero__icon {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .hero__logo-container {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .hero__logo {
+        width: 80px;
+        height: 80px;
     }
 }
