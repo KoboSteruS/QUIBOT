@@ -87,7 +87,7 @@
 /* Stages section */
 .stages {
     padding: 80px 0;
-    background-color: #25304A;
+    background-color: #ffffff;
     color: white;
     position: relative;
 }
@@ -152,13 +152,13 @@
 .stages__title {
     font-size: 18px;
     font-weight: 600;
-    color: white;
+    color: rgb(0, 0, 0);
     margin-bottom: 10px;
 }
 
 .stages__desc {
     font-size: 16px;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(0, 0, 0, 0.8);
 }
 
 .stages__result {
