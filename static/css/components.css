@@ -73,11 +73,33 @@
     padding: 80px 0;
     background-color: #25304A;
     color: white;
+    position: relative;
+}
+
+.highlighted-number {
+    color: #6A5ACD;
+    font-weight: 700;
+    font-size: 1.2em;
+    display: inline-block;
+    position: relative;
+}
+
+.highlighted-number::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: rgba(106, 90, 205, 0.3);
+    bottom: 0;
+    left: 0;
+    border-radius: 2px;
 }
 
 .stages__wrapper {
     display: flex;
-    gap: 50px;
+    align-items: center;
+    gap: 40px;
+    margin-top: 40px;
 }
 
 .stages__img {
@@ -146,7 +168,7 @@
 }
 
 .stages__result-title {
-    font-size: 20px;
+    font-size: 36px;
     font-weight: 600;
     margin-bottom: 10px;
 }
@@ -263,6 +285,76 @@
     .experience__content {
         grid-template-columns: 1fr;
     }
+    
+    .pricing__cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .pricing-card {
+        max-width: 100%;
+    }
+    
+    .pricing-card--featured {
+        transform: scale(1);
+    }
+    
+    .pricing-card--featured:hover {
+        transform: translateY(-5px);
+    }
+    
+    .service-features li {
+        padding-left: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .advantage-card,
+    .experience__card,
+    .service-card,
+    .pricing-card {
+        padding: 20px;
+    }
+    
+    .advantage-card__title,
+    .experience__card-title,
+    .service-card__title {
+        font-size: 18px;
+    }
+    
+    .advantage-card__desc,
+    .experience__card-desc,
+    .service-card__desc {
+        font-size: 14px;
+    }
+    
+    .service-modal__content {
+        padding: 20px;
+    }
+    
+    .service-modal__title {
+        font-size: 20px;
+    }
+    
+    .service-modal__desc {
+        font-size: 14px;
+    }
+    
+    .cta__form {
+        padding: 20px;
+    }
+    
+    .cta__title {
+        font-size: 24px;
+    }
+    
+    .cta__advantage-title {
+        font-size: 18px;
+    }
+    
+    .footer__wrapper {
+        flex-direction: column;
+        gap: 30px;
+    }
 }
 
 /* Services section */
@@ -284,14 +376,24 @@
     gap: 10px;
     transition: all 0.5s ease;
     position: relative;
+    margin-bottom: 30px;
+}
+
+.services__cta {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
 }
 
 .service-item {
+    width: 400px;
     position: relative;
     transition: all 0.4s ease;
 }
 
 .service-button {
+    width: 400px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -299,9 +401,18 @@
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    margin-bottom: 15px;
     cursor: pointer;
     transition: var(--transition);
+    position: relative;
+    color: var(--color-text);
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+.service-button .arrow {
+    transition: transform 0.3s ease;
+    font-size: 18px;
+    color: var(--color-secondary);
 }
 
 .service-button:hover {
@@ -309,16 +420,18 @@
     color: white;
 }
 
-.service-button:hover .service-button__icon {
+.service-button:hover .arrow {
     color: white;
 }
 
 .service-button.active {
     background-color: #25304A;
     color: white;
+    border-radius: 8px 8px 0 0;
 }
 
-.service-button.active .service-button__icon {
+.service-button.active .arrow {
+    transform: rotate(90deg);
     color: white;
 }
 
@@ -329,21 +442,23 @@
     max-height: 0;
     overflow: hidden;
     opacity: 0;
-    transition: all 0.5s ease;
+    transition: all 0.3s ease;
     margin-top: 0;
     position: relative;
-    z-index: -1;
+    z-index: 1;
     border: 1px solid #E4E7EC;
     border-top: none;
+    transform-origin: top;
+    transform: scaleY(0);
+    margin-bottom: 10px;
 }
 
 .service-item.active .service-content {
     max-height: 1000px;
     opacity: 1;
     padding: 20px;
-    margin-top: 0;
+    transform: scaleY(1);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    z-index: 1;
 }
 
 .service-features {
@@ -385,52 +500,6 @@
 
 .service-order-btn:hover {
     background-color: #33B378;
-}
-
-/* Стили для двух-колоночного вида при активном элементе */
-.services__container.split {
-    max-width: 1100px;
-}
-
-.services__list.split {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px 20px;
-}
-
-/* Кнопки в правой колонке без отступов */
-.services__list.split .service-item.right-column {
-    margin-bottom: 0;
-}
-
-.services__list.split .right-column + .right-column {
-    margin-top: -9px;
-}
-
-.services__list.split .service-item.right-column .service-button {
-    border-radius: 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.services__list.split .service-item.right-column:first-child .service-button {
-    border-radius: 10px 10px 0 0;
-}
-
-.services__list.split .service-item.right-column:last-child .service-button {
-    border-radius: 0 0 10px 10px;
-    border-bottom: none;
-}
-
-/* Левая колонка (активный элемент) */
-.service-item.left-column {
-    grid-column: 1;
-    transform: translateX(-20px);
-}
-
-/* Правая колонка (неактивные элементы) */
-.service-item.right-column {
-    grid-column: 2;
-    height: 55px;
 }
 
 /* Service Modal */
@@ -754,7 +823,7 @@
 /* CTA section */
 .cta {
     padding: 80px 0;
-    background-color: #F5F8FA;
+    background-color: #181E2A;
     text-align: center;
 }
 
@@ -766,13 +835,14 @@
 }
 
 .cta__content {
+    margin-left: 300px;
     flex: 0 0 50%;
 }
 
 .cta__title {
     font-size: 32px;
     font-weight: 700;
-    color: var(--color-primary);
+    color: white;
     margin-bottom: 30px;
 }
 
@@ -801,7 +871,7 @@
     padding-left: 15px;
     margin-bottom: 15px;
     font-size: 16px;
-    color: var(--color-text);
+    color: white;
 }
 
 .cta__item::before {
@@ -1004,101 +1074,6 @@
     }
 }
 
-@media (max-width: 768px) {
-    .experience__content {
-        grid-template-columns: 1fr;
-    }
-    
-    .pricing__cards {
-        flex-direction: column;
-    }
-    
-    .pricing-card {
-        flex: 0 0 100%;
-    }
-    
-    .pricing-card--featured {
-        transform: none;
-    }
-    
-    .pricing-card--featured:hover {
-        transform: translateY(-10px);
-    }
-    
-    /* Адаптивные стили для сервисов */
-    .services__container {
-        max-width: 100%;
-    }
-    
-    /* На мобильных устройствах возвращаемся к одной колонке даже в split режиме */
-    .services__list.split {
-        grid-template-columns: 1fr;
-    }
-    
-    .service-item.left-column {
-        grid-column: 1;
-        transform: translateX(0);
-    }
-    
-    .service-item.right-column {
-        grid-column: 1;
-    }
-    
-    .service-features li {
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 480px) {
-    .advantage-card,
-    .experience__card,
-    .service-card,
-    .pricing-card {
-        padding: 20px;
-    }
-    
-    .advantage-card__title,
-    .experience__card-title,
-    .service-card__title {
-        font-size: 18px;
-    }
-    
-    .advantage-card__desc,
-    .experience__card-desc,
-    .service-card__desc {
-        font-size: 14px;
-    }
-    
-    .service-modal__content {
-        padding: 20px;
-    }
-    
-    .service-modal__title {
-        font-size: 20px;
-    }
-    
-    .service-modal__desc {
-        font-size: 14px;
-    }
-    
-    .cta__form {
-        padding: 20px;
-    }
-    
-    .cta__title {
-        font-size: 24px;
-    }
-    
-    .cta__advantage-title {
-        font-size: 18px;
-    }
-    
-    .footer__wrapper {
-        flex-direction: column;
-        gap: 30px;
-    }
-}
-
 .btn {
     display: inline-flex;
     align-items: center;
@@ -1139,4 +1114,21 @@
 .btn-outline:hover {
     background-color: var(--color-secondary);
     color: #ffffff;
+}
+
+.btn--purple {
+    background-color: #6A5ACD;
+    color: white;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(106, 90, 205, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn--purple:hover {
+    background-color: #5D4FB8;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(106, 90, 205, 0.4);
 } 

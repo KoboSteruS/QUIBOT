@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Полный список доработок | 1C:Analizator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/components.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animations.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/all-services.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__wrapper">
+                <div class="logo">
+                    <a href="{{ url_for('index') }}" class="logo__link">
+                        <img src="{{ url_for('static', filename='img/logo.png') }}" alt="1C:Analizator" class="logo__img">
+                    </a>
+                </div>
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="{{ url_for('index') }}#about" class="nav__link">О нас</a></li>
+                        <li class="nav__item"><a href="{{ url_for('index') }}#advantages" class="nav__link">Преимущества</a></li>
+                        <li class="nav__item"><a href="{{ url_for('index') }}#services" class="nav__link">Услуги</a></li>
+                        <li class="nav__item"><a href="{{ url_for('index') }}#stages" class="nav__link">Этапы</a></li>
+                    </ul>
+                </nav>
+                <div class="header__contacts">
+                    <a href="tel:+78001234567" class="header__phone">8 (800) 123-45-67</a>
+                </div>
+                <button class="burger" aria-label="Открыть меню">
+                    <span class="burger__line"></span>
+                    <span class="burger__line"></span>
+                    <span class="burger__line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section class="all-services">
+        <div class="container">
+            <div class="breadcrumbs">
+                <ul class="breadcrumbs__list">
+                    <li class="breadcrumbs__item"><a href="{{ url_for('index') }}" class="breadcrumbs__link">Главная</a></li>
+                    <li class="breadcrumbs__item breadcrumbs__item--active">Полный список доработок</li>
+                </ul>
+            </div>
+
+            <h1 class="all-services__title">Полный список доработок</h1>
+            
+            <div class="all-services__content">
+                <h2 class="all-services__subtitle">Номенклатура</h2>
+                <div class="all-services__text">
+                    <p>Генерация уникального <strong>штрихкода номенклатуры</strong> с префиксом организации, например MP23052022. Используется для создания единого <strong>штрихкода для разных маркетплейсов</strong></p>
+                    
+                    <p>Хранение и печать дополнительных <strong>штрихкодов для разных маркетплейсов</strong>. Используется когда на каждом маркетплейсе используется свой UPC</p>
+                    
+                    <p>Возможность автоматической привязки артикула номенклатуры по схеме <strong>Бренд + Модель + Цвет</strong></p>
+                    
+                    <p>Форма поиска использования номенклатуры в существующих спецификациях</p>
+                    
+                    <p>Документы качества: хранение сертификатов соответствия и деклараций о соответствии в 1С с подробной информацией и "составом" документов. Автоматическая привязка сертификатов к номенклатуре по схеме <strong>"Производитель + Состав + Тип документа качества"</strong>. Возможность печати информации из сертификатов на этикетках на товары</p>
+                </div>
+
+                <h2 class="all-services__subtitle">Производство</h2>
+                <div class="all-services__text">
+                    <p>Создание и хранение технологических карт производства</p>
+                    <p>Автоматический расчет себестоимости по материалам</p>
+                    <p>Планирование производственных циклов</p>
+                    <p>Учет трудозатрат и распределение ресурсов</p>
+                    <p>Контроль качества на всех этапах производства</p>
+                </div>
+
+                <h2 class="all-services__subtitle">Склад</h2>
+                <div class="all-services__text">
+                    <p>Адресное хранение и автоматическое размещение товаров</p>
+                    <p>Инвентаризация с помощью мобильных терминалов</p>
+                    <p>Интеграция с WMS системами маркетплейсов</p>
+                    <p>Управление остатками и автоматические заказы</p>
+                    <p>Печать этикеток и формирование упаковочных листов</p>
+                </div>
+
+                <h2 class="all-services__subtitle">Продажи</h2>
+                <div class="all-services__text">
+                    <p>Автоматический импорт заказов с маркетплейсов</p>
+                    <p>Расчет комиссий и сопутствующих расходов</p>
+                    <p>Аналитика продаж по периодам и площадкам</p>
+                    <p>Мониторинг рейтинга товаров</p>
+                    <p>Работа с отзывами и возвратами</p>
+                </div>
+
+                <h2 class="all-services__subtitle">Закупки</h2>
+                <div class="all-services__text">
+                    <p>Автоматическое формирование заказов поставщикам</p>
+                    <p>Контроль цен и условий поставки</p>
+                    <p>Планирование закупок на основе прогноза продаж</p>
+                    <p>Учет и контроль транспортных расходов</p>
+                    <p>Отслеживание статусов поставок</p>
+                </div>
+
+                <h2 class="all-services__subtitle">Персонал</h2>
+                <div class="all-services__text">
+                    <p>Учет рабочего времени сотрудников</p>
+                    <p>Расчет заработной платы и премий</p>
+                    <p>Распределение задач и контроль выполнения</p>
+                    <p>KPI и эффективность работы</p>
+                    <p>Интеграция с HRM системами</p>
+                </div>
+
+                <h2 class="all-services__subtitle">Дополнительно</h2>
+                <div class="all-services__text">
+                    <p>Интеграция с банковскими сервисами</p>
+                    <p>Электронный документооборот</p>
+                    <p>Отчетность для контролирующих органов</p>
+                    <p>Настройка бизнес-процессов</p>
+                    <p>Резервное копирование и безопасность данных</p>
+                </div>
+
+                <h2 class="all-services__subtitle">API</h2>
+                <div class="all-services__text">
+                    <p>Разработка API для интеграции с внешними системами</p>
+                    <p>Автоматический обмен данными с маркетплейсами</p>
+                    <p>Интеграция с CRM системами</p>
+                    <p>Синхронизация с мобильными приложениями</p>
+                    <p>Настройка веб-хуков для обновления данных</p>
+                </div>
+            </div>
+
+            <div class="all-services__cta">
+                <a href="{{ url_for('index') }}#contact" class="btn btn--primary">Заказать консультацию</a>
+                <a href="{{ url_for('index') }}" class="btn btn--outline">Вернуться на главную</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__wrapper">
+                <div class="footer__column">
+                    <a href="{{ url_for('index') }}" class="footer__logo">
+                        <img src="{{ url_for('static', filename='img/logo.png') }}" alt="1C:Analizator" class="footer__logo-img">
+                    </a>
+                    <p class="footer__copyright">© 2024 1C:Analizator. Все права защищены.</p>
+                </div>
+                <div class="footer__column">
+                    <h4 class="footer__title">Навигация</h4>
+                    <ul class="footer__menu">
+                        <li class="footer__menu-item"><a href="{{ url_for('index') }}#about" class="footer__link">О нас</a></li>
+                        <li class="footer__menu-item"><a href="{{ url_for('index') }}#advantages" class="footer__link">Преимущества</a></li>
+                        <li class="footer__menu-item"><a href="{{ url_for('index') }}#services" class="footer__link">Услуги</a></li>
+                        <li class="footer__menu-item"><a href="{{ url_for('index') }}#pricing" class="footer__link">Стоимость</a></li>
+                    </ul>
+                </div>
+                <div class="footer__column">
+                    <h4 class="footer__title">Контакты</h4>
+                    <address class="footer__address">
+                        <p class="footer__contact">г. Москва, ул. Примерная, д. 123</p>
+                        <a href="tel:+78001234567" class="footer__link">8 (800) 123-45-67</a>
+                        <a href="mailto:info@1c-analizator.ru" class="footer__link">info@1c-analizator.ru</a>
+                    </address>
+                </div>
+                <div class="footer__column">
+                    <h4 class="footer__title">Соцсети</h4>
+                    <div class="footer__socials">
+                        <a href="#" class="footer__social" aria-label="ВКонтакте">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15.07 2H8.93C3.33 2 2 3.33 2 8.93V15.07C2 20.67 3.33 22 8.93 22H15.07C20.67 22 22 20.67 22 15.07V8.93C22 3.33 20.67 2 15.07 2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M16.12 16.12C13.5 18.74 9.5 18.74 6.88 16.12C4.26 13.5 4.26 9.5 6.88 6.88C9.5 4.26 13.5 4.26 16.12 6.88C18.74 9.5 18.74 13.5 16.12 16.12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="footer__social" aria-label="Telegram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18.47 4.05C18.47 4.05 20.25 3.3 20.16 5.04C20.13 5.79 19.64 8.46 19.25 11.38L18.13 18.06C18.13 18.06 18.04 19.12 17.25 19.3C16.46 19.48 15.28 18.62 15.07 18.44C14.9 18.31 11.63 16.21 10.4 15.13C10.13 14.9 9.82 14.42 10.44 13.88C12.06 12.37 14.04 10.47 15.26 9.26C15.8 8.72 16.34 7.44 14.04 8.9L7.75 13.01C7.75 13.01 7.02 13.48 5.95 13.17C4.88 12.86 3.66 12.46 3.66 12.46C3.66 12.46 2.54 11.79 4.36 11.1L15.25 6.94C15.25 6.94 17.34 5.98 18.47 4.05Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="footer__social" aria-label="YouTube">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17 20H7C4 20 2 18 2 15V9C2 6 4 4 7 4H17C20 4 22 6 22 9V15C22 18 20 20 17 20Z" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M11.4 9.5L13.9 11L11.4 12.5V9.5Z" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html> 

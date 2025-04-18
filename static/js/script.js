@@ -53,30 +53,19 @@ document.addEventListener('DOMContentLoaded', function() {
                     const currentItem = this.closest('.service-item');
                     const isActive = currentItem.classList.contains('active');
                     
-                    // Закрываем все элементы
-                    serviceItems.forEach(otherItem => {
-                        otherItem.classList.remove('active', 'left-column', 'right-column');
-                    });
-                    
-                    // Если никакой элемент не активен, возвращаем в одну колонку
+                    // Если этот элемент уже активен, закрываем его
                     if (isActive) {
-                        servicesList.classList.remove('split');
-                        servicesContainer.classList.remove('split');
+                        currentItem.classList.remove('active');
                         return;
                     }
                     
-                    // Активируем текущий элемент и разделяем на две колонки
-                    currentItem.classList.add('active', 'left-column');
-                    
-                    // Остальные элементы перемещаем в правую колонку
+                    // Закрываем все элементы
                     serviceItems.forEach(otherItem => {
-                        if (otherItem !== currentItem) {
-                            otherItem.classList.add('right-column');
-                        }
+                        otherItem.classList.remove('active');
                     });
                     
-                    servicesList.classList.add('split');
-                    servicesContainer.classList.add('split');
+                    // Активируем текущий элемент
+                    currentItem.classList.add('active');
                 });
             }
         });

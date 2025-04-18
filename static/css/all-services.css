@@ -1,0 +1,151 @@
+/* Стили для страницы всех услуг и доработок */
+.all-services {
+    padding: 80px 0;
+    background-color: #F5F8FA;
+}
+
+.breadcrumbs {
+    margin-bottom: 30px;
+}
+
+.breadcrumbs__list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.breadcrumbs__item {
+    font-size: 14px;
+    color: #666;
+    position: relative;
+}
+
+.breadcrumbs__item:not(:last-child) {
+    margin-right: 25px;
+}
+
+.breadcrumbs__item:not(:last-child)::after {
+    content: '>';
+    position: absolute;
+    right: -15px;
+    top: 0;
+    color: #ccc;
+}
+
+.breadcrumbs__link {
+    color: #6A5ACD;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumbs__link:hover {
+    color: #5949B7;
+}
+
+.breadcrumbs__item--active {
+    color: #333;
+    font-weight: 500;
+}
+
+.all-services__title {
+    font-size: 42px;
+    font-weight: 700;
+    color: #181E2A;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.all-services__content {
+    background-color: white;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    margin-bottom: 40px;
+}
+
+.all-services__subtitle {
+    font-size: 28px;
+    font-weight: 600;
+    color: #181E2A;
+    margin-bottom: 20px;
+    margin-top: 40px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #6A5ACD;
+}
+
+.all-services__subtitle:first-of-type {
+    margin-top: 0;
+}
+
+.all-services__text {
+    margin-bottom: 30px;
+}
+
+.all-services__text p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.all-services__text strong {
+    color: #6A5ACD;
+    font-weight: 500;
+}
+
+.all-services__cta {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Стиль для выделенных чисел в заголовках */
+.highlighted-number {
+    color: #6A5ACD;
+    font-weight: 700;
+}
+
+/* Медиа-запросы */
+@media (max-width: 768px) {
+    .all-services {
+        padding: 50px 0;
+    }
+    
+    .all-services__title {
+        font-size: 32px;
+    }
+    
+    .all-services__subtitle {
+        font-size: 24px;
+    }
+    
+    .all-services__content {
+        padding: 25px;
+    }
+    
+    .all-services__cta {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .all-services__cta .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .all-services__title {
+        font-size: 28px;
+    }
+    
+    .all-services__subtitle {
+        font-size: 20px;
+    }
+    
+    .all-services__text p {
+        font-size: 15px;
+    }
+} 

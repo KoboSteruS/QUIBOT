@@ -131,7 +131,7 @@
 
     <section class="stages" id="stages">
         <div class="container">
-            <h2 class="section-title">Этапы внедрения</h2>
+            <h2 class="section-title white__title"><span class="highlighted-number">5</span> простых шагов для внедрения</h2>
             <div class="stages__wrapper">
                 <div class="stages__img">
                     <img src="{{ url_for('static', filename='img/team.png') }}" alt="Команда внедрения" class="stages__photo">
@@ -175,7 +175,7 @@
                         </li>
                     </ol>
                     <div class="stages__result">
-                        <h3 class="stages__result-title">Полное внедрение всего за 30 дней</h3>
+                        <h3 class="stages__result-title">Полное внедрение всего за <span class="highlighted-number">30</span> дней</h3>
                         <p class="stages__result-desc">Запустите автоматизированный учет для вашего бизнеса уже через месяц</p>
                     </div>
                 </div>
@@ -243,7 +243,6 @@
                                 
                                 <p>Документы качества: хранение сертификатов соответствия и деклараций о соответствии в 1С с подробной информацией и "составом" документов. Автоматическая привязка сертификатов к номенклатуре по схеме <strong>"Производитель + Состав + Тип документа качества"</strong>. Возможность печати информации из сертификатов на этикетках на товары (3)</p>
                             </div>
-                            <a href="#contact" class="service-order-btn">Заказать</a>
                         </div>
                     </div>
                     <div class="service-item" data-service="production">
@@ -259,7 +258,6 @@
                                 <p>Учет трудозатрат и распределение ресурсов</p>
                                 <p>Контроль качества на всех этапах производства</p>
                             </div>
-                            <a href="#contact" class="service-order-btn">Заказать</a>
                         </div>
                     </div>
                     <div class="service-item" data-service="warehouse">
@@ -275,7 +273,6 @@
                                 <p>Управление остатками и автоматические заказы</p>
                                 <p>Печать этикеток и формирование упаковочных листов</p>
                             </div>
-                            <a href="#contact" class="service-order-btn">Заказать</a>
                         </div>
                     </div>
                     <div class="service-item" data-service="sales">
@@ -291,7 +288,6 @@
                                 <p>Мониторинг рейтинга товаров</p>
                                 <p>Работа с отзывами и возвратами</p>
                             </div>
-                            <a href="#contact" class="service-order-btn">Заказать</a>
                         </div>
                     </div>
                     <div class="service-item" data-service="purchases">
@@ -307,7 +303,6 @@
                                 <p>Учет и контроль транспортных расходов</p>
                                 <p>Отслеживание статусов поставок</p>
                             </div>
-                            <a href="#contact" class="service-order-btn">Заказать</a>
                         </div>
                     </div>
                     <div class="service-item" data-service="personnel">
@@ -323,7 +318,6 @@
                                 <p>KPI и эффективность работы</p>
                                 <p>Интеграция с HRM системами</p>
                             </div>
-                            <a href="#contact" class="service-order-btn">Заказать</a>
                         </div>
                     </div>
                     <div class="service-item" data-service="additional">
@@ -339,7 +333,6 @@
                                 <p>Настройка бизнес-процессов</p>
                                 <p>Резервное копирование и безопасность данных</p>
                             </div>
-                            <a href="#contact" class="service-order-btn">Заказать</a>
                         </div>
                     </div>
                     <div class="service-item" data-service="api">
@@ -355,9 +348,11 @@
                                 <p>Синхронизация с мобильными приложениями</p>
                                 <p>Настройка веб-хуков для обновления данных</p>
                             </div>
-                            <a href="#contact" class="service-order-btn">Заказать</a>
                         </div>
                     </div>
+                </div>
+                <div class="services__cta">
+                    <a href="/all-services" class="btn btn--purple">Просмотреть полный список доработок</a>
                 </div>
             </div>
         </div>
@@ -380,6 +375,34 @@
                 </div>
             </div>
             <a href="/service/" class="btn btn--primary service-modal__btn">Заказать услугу</a>
+        </div>
+    </section>
+
+    <section class="cta" id="contact">
+        <div class="container">
+            <div class="cta__wrapper">
+                <div class="cta__content">
+                    <h2 class="cta__title">Почему с Нами Лучше, Чем «Доработать Самому»?</h2>
+                    <div class="cta__advantages">
+                        <div class="cta__advantage">
+                            <h3 class="cta__advantage-title">Преимущества Готового Решения</h3>
+                            <ul class="cta__list">
+                                <li class="cta__item">Экономия времени и ресурсов компании</li>
+                                <li class="cta__item">Проверенные решения, которые работают</li>
+                                <li class="cta__item">Отсутствие скрытых ошибок и проблем</li>
+                            </ul>
+                        </div>
+                        <div class="cta__advantage">
+                            <h3 class="cta__advantage-title">Профессиональный сайт сразу</h3>
+                            <ul class="cta__list">
+                                <li class="cta__item">Экспертная поддержка специалистов</li>
+                                <li class="cta__item">Быстрый запуск и масштабирование</li>
+                                <li class="cta__item">Все необходимые интеграции и функционал</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     
@@ -448,64 +471,14 @@
         </div>
     </section>
 
-    <section class="cta" id="contact">
-        <div class="container">
-            <div class="cta__wrapper">
-                <div class="cta__content">
-                    <h2 class="cta__title">Почему с Нами Лучше, Чем «Доработать Самому»?</h2>
-                    <div class="cta__advantages">
-                        <div class="cta__advantage">
-                            <h3 class="cta__advantage-title">Преимущества Готового Решения</h3>
-                            <ul class="cta__list">
-                                <li class="cta__item">Экономия времени и ресурсов компании</li>
-                                <li class="cta__item">Проверенные решения, которые работают</li>
-                                <li class="cta__item">Отсутствие скрытых ошибок и проблем</li>
-                            </ul>
-                        </div>
-                        <div class="cta__advantage">
-                            <h3 class="cta__advantage-title">Профессиональный сайт сразу</h3>
-                            <ul class="cta__list">
-                                <li class="cta__item">Экспертная поддержка специалистов</li>
-                                <li class="cta__item">Быстрый запуск и масштабирование</li>
-                                <li class="cta__item">Все необходимые интеграции и функционал</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="cta__form-wrap">
-                    <form class="cta__form" id="contactForm">
-                        <h3 class="cta__form-title">Оставьте заявку</h3>
-                        <div class="cta__form-group">
-                            <input type="text" class="cta__input" id="name" name="name" placeholder="Ваше имя" required>
-                        </div>
-                        <div class="cta__form-group">
-                            <input type="tel" class="cta__input" id="phone" name="phone" placeholder="Ваш телефон" required>
-                        </div>
-                        <div class="cta__form-group">
-                            <input type="email" class="cta__input" id="email" name="email" placeholder="Ваш email" required>
-                        </div>
-                        <div class="cta__form-group">
-                            <textarea class="cta__textarea" id="message" name="message" placeholder="Комментарий" rows="3"></textarea>
-                        </div>
-                        <div class="cta__form-group">
-                            <label class="cta__checkbox-label">
-                                <input type="checkbox" class="cta__checkbox" id="agreement" name="agreement" required>
-                                <span class="cta__checkbox-text">Я согласен с условиями обработки персональных данных</span>
-                            </label>
-                        </div>
-                        <button type="submit" class="btn btn--primary cta__submit">Отправить</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+
 
     <footer class="footer">
         <div class="container">
             <div class="footer__wrapper">
                 <div class="footer__column">
                     <a href="#" class="footer__logo">
-                        <img src="{{ url_for('static', filename='img/logo-light.png') }}" alt="1C:Analizator" class="footer__logo-img">
+                        <img src="{{ url_for('static', filename='img/logo.png') }}" alt="1C:Analizator" class="footer__logo-img">
                     </a>
                     <p class="footer__copyright">© 2024 1C:Analizator. Все права защищены.</p>
                 </div>

@@ -34,6 +34,11 @@ def index():
     logger.info("Запрос главной страницы")
     return render_template('index.html')
 
+@app.route('/services')
+def all_services():
+    logger.info("Запрос страницы со всеми доработками")
+    return render_template('all-services.html')
+
 @app.route('/service/<service_id>')
 def service_detail(service_id):
     logger.info(f"Запрос детальной страницы услуги: {service_id}")
