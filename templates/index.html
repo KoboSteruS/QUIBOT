@@ -357,7 +357,7 @@
                     </div>
                 </div>
                 <div class="services__cta">
-                    <a href="/all-services" class="btn btn--purple">Просмотреть полный список доработок</a>
+                    <a href="/services" class="btn btn--purple">Просмотреть полный список доработок</a>
                 </div>
             </div>
         </div>
@@ -460,77 +460,67 @@
         </div>
     </section>
 
-    <section id="reviews" class="reviews">
+    <!-- Reviews Section -->
+    <section class="reviews">
         <div class="container">
             <h2 class="section-title">Отзывы наших клиентов</h2>
+            <p class="section-description">Что говорят владельцы бизнеса, которые уже используют наше решение</p>
             
-            <div class="review-slider">
+            <div class="reviews-container">
                 <div class="review-cards">
-                    <div class="review-card active">
-                        <img src="{{ url_for('static', filename='img/review-1.jpg') }}" alt="Александр Петров" class="review-card__photo">
-                        <div class="review-card__content">
-                            <h4 class="review-card__name">Александр Петров</h4>
-                            <p class="review-card__position">Финансовый директор, ООО "ТехноПром"</p>
-                            <p class="review-card__text">Внедрение 1С позволило нам автоматизировать учет и сократить время на формирование отчетов на 70%. Команда специалистов выполнила все работы точно в срок.</p>
-                            <div class="review-card__stars">
-                                <span class="star">★</span>
-                                <span class="star">★</span>
-                                <span class="star">★</span>
-                                <span class="star">★</span>
-                                <span class="star">★</span>
+                    <div class="review-card">
+                        <div class="review-card__header">
+                            <img src="{{ url_for('static', filename='img/avatar1.jpg') }}" alt="Фото клиента" class="review-card__avatar">
+                            <div class="review-card__info">
+                                <h4 class="review-card__name">Алексей Смирнов</h4>
+                                <p class="review-card__position">Директор ООО "АвтоПартс"</p>
                             </div>
                         </div>
+                        <div class="review-card__rating">★★★★★</div>
+                        <p class="review-card__text">Внедрили систему 1С:Лендинг для нашего магазина автозапчастей. За первый месяц работы смогли навести порядок в складском учете и ускорить обработку заказов. Рекомендую всем, кто хочет автоматизировать свой бизнес без лишних сложностей.</p>
+                        <p class="review-card__date">Май 2023</p>
                     </div>
                     
                     <div class="review-card">
-                        <img src="{{ url_for('static', filename='img/review-2.jpg') }}" alt="Елена Соколова" class="review-card__photo">
-                        <div class="review-card__content">
-                            <h4 class="review-card__name">Елена Соколова</h4>
-                            <p class="review-card__position">Генеральный директор, ООО "МедСервис"</p>
-                            <p class="review-card__text">Благодаря 1С мы смогли наладить прозрачный учет товаров и оптимизировать складские процессы. Особенно ценно, что специалисты обучили всех наших сотрудников.</p>
-                            <div class="review-card__stars">
-                                <span class="star">★</span>
-                                <span class="star">★</span>
-                                <span class="star">★</span>
-                                <span class="star">★</span>
-                                <span class="star">★</span>
+                        <div class="review-card__header">
+                            <img src="{{ url_for('static', filename='img/avatar2.jpg') }}" alt="Фото клиента" class="review-card__avatar">
+                            <div class="review-card__info">
+                                <h4 class="review-card__name">Елена Ковалева</h4>
+                                <p class="review-card__position">Руководитель сети кофеен "Кофейный дом"</p>
                             </div>
                         </div>
+                        <div class="review-card__rating">★★★★★</div>
+                        <p class="review-card__text">Благодаря 1С:Лендинг мы смогли объединить учет по всем нашим точкам в единую систему. Теперь я могу в реальном времени видеть ситуацию в каждой кофейне и принимать обоснованные решения по управлению. Специалисты компании всегда на связи и оперативно помогают решать любые вопросы.</p>
+                        <p class="review-card__date">Июнь 2023</p>
                     </div>
                     
                     <div class="review-card">
-                        <img src="{{ url_for('static', filename='img/review-3.jpg') }}" alt="Дмитрий Николаев" class="review-card__photo">
-                        <div class="review-card__content">
-                            <h4 class="review-card__name">Дмитрий Николаев</h4>
-                            <p class="review-card__position">Руководитель отдела продаж, ЗАО "СтройКомплект"</p>
-                            <p class="review-card__text">Внедрение 1С помогло нам улучшить клиентский сервис и автоматизировать ключевые бизнес-процессы. Рекомендую эту команду профессионалов!</p>
-                            <div class="review-card__stars">
-                                <span class="star">★</span>
-                                <span class="star">★</span>
-                                <span class="star">★</span>
-                                <span class="star">★</span>
-                                <span class="star">★</span>
+                        <div class="review-card__header">
+                            <img src="{{ url_for('static', filename='img/avatar3.jpg') }}" alt="Фото клиента" class="review-card__avatar">
+                            <div class="review-card__info">
+                                <h4 class="review-card__name">Дмитрий Казаков</h4>
+                                <p class="review-card__position">Владелец интернет-магазина "ТехноМир"</p>
                             </div>
                         </div>
+                        <div class="review-card__rating">★★★★☆</div>
+                        <p class="review-card__text">Мы долго выбирали систему для автоматизации и остановились на 1С:Лендинг. За 30 дней внедрения получили полностью рабочую систему, которая избавила нас от большинства рутинных операций. Особенно ценна интеграция с нашим сайтом — заказы автоматически попадают в систему.</p>
+                        <p class="review-card__date">Июль 2023</p>
                     </div>
                 </div>
                 
                 <div class="review-navigation">
-                    <button class="review-prev" aria-label="Предыдущий отзыв">
-                        &larr;
-                    </button>
+                    <button id="review-prev" class="review-button">&#8592;</button>
                     <div class="review-dots">
                         <span class="review-dot active"></span>
                         <span class="review-dot"></span>
                         <span class="review-dot"></span>
                     </div>
-                    <button class="review-next" aria-label="Следующий отзыв">
-                        &rarr;
-                    </button>
+                    <button id="review-next" class="review-button">&#8594;</button>
                 </div>
             </div>
         </div>
     </section>
+    <!-- End Reviews Section -->
 
     <footer class="footer">
         <div class="container">
@@ -544,19 +534,16 @@
                 <div class="footer__column">
                     <h4 class="footer__title">Навигация</h4>
                     <ul class="footer__menu">
-                        <li class="footer__menu-item"><a href="#about" class="footer__link">О нас</a></li>
-                        <li class="footer__menu-item"><a href="#advantages" class="footer__link">Преимущества</a></li>
-                        <li class="footer__menu-item"><a href="#services" class="footer__link">Услуги</a></li>
-                        <li class="footer__menu-item"><a href="#pricing" class="footer__link">Стоимость</a></li>
+                        <li><a href="#" class="footer__link">О нас</a></li>
+                        <li><a href="#" class="footer__link">Карьера</a></li>
+                        <li><a href="#" class="footer__link">Контакты</a></li>
+                        <li><a href="#" class="footer__link">Блог</a></li>
                     </ul>
                 </div>
                 <div class="footer__column">
-                    <h4 class="footer__title">Контакты</h4>
-                    <address class="footer__address">
-                        <p class="footer__contact">г. Москва, ул. Примерная, д. 123</p>
-                        <a href="tel:+78001234567" class="footer__link">8 (800) 123-45-67</a>
-                        <a href="mailto:info@1c-analizator.ru" class="footer__link">info@1c-analizator.ru</a>
-                    </address>
+                    <h4 class="footer__title">Связаться с нами</h4>
+                    <p class="footer__contact">Email: info@1c-lending.ru</p>
+                    <p class="footer__contact">Телефон: 8 (800) 123-45-67</p>
                 </div>
                 <div class="footer__column">
                     <h4 class="footer__title">Соцсети</h4>

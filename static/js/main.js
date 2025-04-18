@@ -1,91 +1,107 @@
 // Slider functionality for reviews section
 document.addEventListener('DOMContentLoaded', function() {
+    // Reviews slider functionality
     const reviewCards = document.querySelectorAll('.review-card');
-    const reviewDots = document.querySelectorAll('.review-dot');
-    const prevButton = document.querySelector('.review-prev');
-    const nextButton = document.querySelector('.review-next');
-    let currentIndex = 0;
-    let interval;
-
-    // Показать слайд
-    function showSlide(index) {
-        reviewCards.forEach((card, i) => {
-            card.classList.remove('active');
-            if (i === index) {
-                card.classList.add('active');
+    const reviewContainer = document.querySelector('.review-cards');
+    const prevBtn = document.querySelector('.review-prev');
+    const nextBtn = document.querySelector('.review-next');
+    const dotsContainer = document.querySelector('.review-dots');
+    
+    if (reviewCards.length && reviewContainer && prevBtn && nextBtn && dotsContainer) {
+        let currentIndex = 0;
+        let cardWidth;
+        let visibleCards;
+        
+        // Create dots based on number of slides
+        function createDots() {
+            dotsContainer.innerHTML = '';
+            
+            const totalDots = Math.ceil(reviewCards.length / visibleCards);
+            
+            for (let i = 0; i < totalDots; i++) {
+                const dot = document.createElement('span');
+                dot.classList.add('review-dot');
+                if (i === 0) dot.classList.add('active');
+                dot.dataset.index = i;
+                
+                dot.addEventListener('click', () => {
+                    goToSlide(i);
+                });
+                
+                dotsContainer.appendChild(dot);
             }
-        });
-
-        reviewDots.forEach((dot, i) => {
-            dot.classList.remove('active');
-            if (i === index) {
-                dot.classList.add('active');
-            }
-        });
-
-        currentIndex = index;
-    }
-
-    // Перейти к следующему слайду
-    function nextSlide() {
-        const newIndex = (currentIndex + 1) % reviewCards.length;
-        showSlide(newIndex);
-    }
-
-    // Перейти к предыдущему слайду
-    function prevSlide() {
-        const newIndex = (currentIndex - 1 + reviewCards.length) % reviewCards.length;
-        showSlide(newIndex);
-    }
-
-    // Запуск автопрокрутки
-    function startAutoplay() {
-        // Очистка предыдущего интервала для безопасности
-        if (interval) {
-            clearInterval(interval);
         }
-        interval = setInterval(nextSlide, 5000);
-    }
-
-    // Остановка автопрокрутки
-    function stopAutoplay() {
-        clearInterval(interval);
-    }
-
-    // Обработчики событий
-    if (prevButton && nextButton) {
-        prevButton.addEventListener('click', function() {
-            prevSlide();
-            stopAutoplay();
-            startAutoplay(); // Перезапуск после взаимодействия
+        
+        // Update active dot
+        function updateDots() {
+            const dots = dotsContainer.querySelectorAll('.review-dot');
+            dots.forEach((dot, index) => {
+                if (parseInt(dot.dataset.index) === currentIndex) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+        
+        // Go to specific slide
+        function goToSlide(index) {
+            currentIndex = index;
+            const translateX = -currentIndex * (cardWidth * visibleCards);
+            reviewContainer.style.transform = `translateX(${translateX}px)`;
+            updateDots();
+            updateButtons();
+        }
+        
+        // Update buttons state
+        function updateButtons() {
+            prevBtn.disabled = currentIndex === 0;
+            nextBtn.disabled = currentIndex === Math.ceil(reviewCards.length / visibleCards) - 1;
+        }
+        
+        // Calculate layout
+        function calculateLayout() {
+            const containerWidth = reviewContainer.parentElement.clientWidth;
+            
+            if (window.innerWidth > 992) {
+                visibleCards = 3;
+            } else if (window.innerWidth > 768) {
+                visibleCards = 2;
+            } else {
+                visibleCards = 1;
+            }
+            
+            cardWidth = containerWidth / visibleCards;
+            
+            // Reset to first slide when resizing
+            currentIndex = 0;
+            reviewContainer.style.transform = 'translateX(0)';
+            
+            // Update dots based on new layout
+            createDots();
+            updateButtons();
+        }
+        
+        // Initialize slider
+        calculateLayout();
+        
+        // Event listeners
+        prevBtn.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                goToSlide(currentIndex - 1);
+            }
         });
         
-        nextButton.addEventListener('click', function() {
-            nextSlide();
-            stopAutoplay();
-            startAutoplay(); // Перезапуск после взаимодействия
+        nextBtn.addEventListener('click', () => {
+            if (currentIndex < Math.ceil(reviewCards.length / visibleCards) - 1) {
+                goToSlide(currentIndex + 1);
+            }
         });
+        
+        // Handle window resize
+        window.addEventListener('resize', calculateLayout);
     }
-
-    reviewDots.forEach((dot, i) => {
-        dot.addEventListener('click', () => {
-            showSlide(i);
-            stopAutoplay();
-            startAutoplay(); // Перезапуск после взаимодействия
-        });
-    });
-
-    // Остановка автопрокрутки при наведении мыши
-    const reviewSlider = document.querySelector('.review-slider');
-    if (reviewSlider) {
-        reviewSlider.addEventListener('mouseenter', stopAutoplay);
-        reviewSlider.addEventListener('mouseleave', startAutoplay);
-    }
-
-    // Инициализация слайдера
-    showSlide(0);
-    startAutoplay();
-
+    
     // Highlight number animation on scroll
     const highlightedNumbers = document.querySelectorAll('.highlighted-number');
     

@@ -10,6 +10,17 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    // Mobile menu toggle
+    const menuToggle = document.querySelector('.header__menu-toggle');
+    const mobileMenu = document.querySelector('.header__nav');
+    
+    if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', function() {
+            mobileMenu.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+    }
+    
     // Smooth scroll for navigation links
     const navLinks = document.querySelectorAll('.nav__link, .footer__link, .hero__btn, .pricing-card__button');
     
@@ -75,94 +86,62 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Reviews slider
+    // Review slider functionality
     const reviewCards = document.querySelectorAll('.review-card');
-    const reviewDots = document.querySelectorAll('.review-dot');
-    const prevButton = document.querySelector('.review-prev');
-    const nextButton = document.querySelector('.review-next');
+    const prevButton = document.getElementById('review-prev');
+    const nextButton = document.getElementById('review-next');
+    const dots = document.querySelectorAll('.review-dot');
     
-    if (reviewCards.length) {
+    if (reviewCards.length && prevButton && nextButton && dots.length) {
         let currentIndex = 0;
-        let interval;
-    
-        // Показать слайд
-        function showSlide(index) {
-            reviewCards.forEach((card, i) => {
-                card.classList.remove('active');
-                if (i === index) {
-                    card.classList.add('active');
-                }
-            });
-    
-            reviewDots.forEach((dot, i) => {
-                dot.classList.remove('active');
-                if (i === index) {
-                    dot.classList.add('active');
-                }
-            });
-    
-            currentIndex = index;
-        }
-    
-        // Перейти к следующему слайду
-        function nextSlide() {
-            const newIndex = (currentIndex + 1) % reviewCards.length;
-            showSlide(newIndex);
-        }
-    
-        // Перейти к предыдущему слайду
-        function prevSlide() {
-            const newIndex = (currentIndex - 1 + reviewCards.length) % reviewCards.length;
-            showSlide(newIndex);
-        }
-    
-        // Запуск автопрокрутки
-        function startAutoplay() {
-            // Очистка предыдущего интервала для безопасности
-            if (interval) {
-                clearInterval(interval);
+        const totalReviews = reviewCards.length;
+        
+        // Initialize slider
+        updateReviewSlider();
+        
+        // Previous button click handler
+        prevButton.addEventListener('click', function() {
+            if (!this.disabled) {
+                currentIndex = (currentIndex - 1 + totalReviews) % totalReviews;
+                updateReviewSlider();
             }
-            interval = setInterval(nextSlide, 5000);
-        }
-    
-        // Остановка автопрокрутки
-        function stopAutoplay() {
-            clearInterval(interval);
-        }
-    
-        // Обработчики событий для слайдера отзывов
-        if (prevButton && nextButton) {
-            prevButton.addEventListener('click', function() {
-                prevSlide();
-                stopAutoplay();
-                startAutoplay(); // Перезапуск после взаимодействия
-            });
-            
-            nextButton.addEventListener('click', function() {
-                nextSlide();
-                stopAutoplay();
-                startAutoplay(); // Перезапуск после взаимодействия
-            });
-        }
-    
-        reviewDots.forEach((dot, i) => {
-            dot.addEventListener('click', () => {
-                showSlide(i);
-                stopAutoplay();
-                startAutoplay(); // Перезапуск после взаимодействия
+        });
+        
+        // Next button click handler
+        nextButton.addEventListener('click', function() {
+            if (!this.disabled) {
+                currentIndex = (currentIndex + 1) % totalReviews;
+                updateReviewSlider();
+            }
+        });
+        
+        // Dot click handlers
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', function() {
+                currentIndex = index;
+                updateReviewSlider();
             });
         });
-    
-        // Остановка автопрокрутки при наведении мыши
-        const reviewSlider = document.querySelector('.review-slider');
-        if (reviewSlider) {
-            reviewSlider.addEventListener('mouseenter', stopAutoplay);
-            reviewSlider.addEventListener('mouseleave', startAutoplay);
+        
+        // Update the review slider based on current index
+        function updateReviewSlider() {
+            // Show only one review at a time
+            reviewCards.forEach((card, index) => {
+                card.style.display = index === currentIndex ? 'block' : 'none';
+            });
+            
+            // Update active dot
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+            
+            // Update navigation buttons state
+            prevButton.disabled = currentIndex === 0;
+            nextButton.disabled = currentIndex === totalReviews - 1;
         }
-    
-        // Инициализация слайдера отзывов
-        showSlide(0);
-        startAutoplay();
+        
+        // Handle window resize
+        window.addEventListener('resize', updateReviewSlider);
     }
     
     // Animation on scroll

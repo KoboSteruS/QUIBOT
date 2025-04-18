@@ -39,18 +39,6 @@ def all_services():
     logger.info("Запрос страницы со всеми доработками")
     return render_template('all-services.html')
 
-@app.route('/service/<service_id>')
-def service_detail(service_id):
-    logger.info(f"Запрос детальной страницы услуги: {service_id}")
-    services_data = load_services_data()
-    service_info = services_data.get(service_id, {})
-    
-    if not service_info:
-        logger.warning(f"Услуга с ID {service_id} не найдена")
-        return render_template('404.html'), 404
-    
-    return render_template('service_detail.html', service=service_info, service_id=service_id)
-
 @app.route('/api/services')
 def get_services():
     logger.info("Запрос API данных услуг")
