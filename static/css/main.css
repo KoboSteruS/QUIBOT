@@ -1,0 +1,168 @@
+:root {
+    --color-primary: #3B82F6;
+    --color-primary-dark: #2563EB;
+    --color-secondary: #10B981;
+    --color-text: #1E293B;
+    --color-text-light: #64748B;
+    --color-white: #FFFFFF;
+    --color-bg-dark: #181E2A;
+    --color-bg: #25304A;
+    --color-bg-light: #F5F8FA;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--color-text);
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section {
+    padding: 80px 0;
+}
+
+.section-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.section-desc {
+    font-size: 18px;
+    color: var(--color-text-light);
+    margin-bottom: 60px;
+    text-align: center;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-dark);
+}
+
+.btn-secondary {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+}
+
+.btn-outline {
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+    background: transparent;
+}
+
+.btn-outline:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+/* Highlighted numbers animation */
+.highlighted-number {
+    color: var(--color-primary);
+    font-weight: 700;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.highlighted-number.animated {
+    animation: pulse 1s ease-in-out;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Review item styles */
+.review-item {
+    opacity: 0;
+    position: absolute;
+    transition: opacity 0.5s ease;
+    width: 100%;
+    height: 100%;
+}
+
+.review-item.active {
+    opacity: 1;
+    position: relative;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .section {
+        padding: 60px 0;
+    }
+    
+    .section-title {
+        font-size: 28px;
+    }
+    
+    .section-desc {
+        font-size: 16px;
+    }
+    
+    .btn {
+        padding: 10px 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .section {
+        padding: 40px 0;
+    }
+    
+    .section-title {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+} 

@@ -6,12 +6,12 @@ document.addEventListener('DOMContentLoaded', function() {
     if (burger && nav) {
         burger.addEventListener('click', function() {
             nav.classList.toggle('is-active');
-            burger.classList.toggle('is-active');
+            this.classList.toggle('is-active');
         });
     }
     
     // Smooth scroll for navigation links
-    const navLinks = document.querySelectorAll('.nav__link, .footer__link, .hero__btn, .pricing-card__btn');
+    const navLinks = document.querySelectorAll('.nav__link, .footer__link, .hero__btn, .pricing-card__button');
     
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 if (targetElement) {
                     // Close mobile menu if open
-                    if (nav.classList.contains('is-active')) {
+                    if (nav && nav.classList.contains('is-active')) {
                         nav.classList.remove('is-active');
                         burger.classList.remove('is-active');
                     }
@@ -41,10 +41,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Service buttons expandable
     const serviceItems = document.querySelectorAll('.service-item');
-    const servicesList = document.querySelector('.services__list');
-    const servicesContainer = document.querySelector('.services__container');
     
-    if (serviceItems.length && servicesList && servicesContainer) {
+    if (serviceItems.length) {
         serviceItems.forEach(item => {
             const button = item.querySelector('.service-button');
             
@@ -56,219 +54,119 @@ document.addEventListener('DOMContentLoaded', function() {
                     // Если этот элемент уже активен, закрываем его
                     if (isActive) {
                         currentItem.classList.remove('active');
+                        this.classList.remove('active');
                         return;
                     }
                     
                     // Закрываем все элементы
                     serviceItems.forEach(otherItem => {
                         otherItem.classList.remove('active');
+                        const otherButton = otherItem.querySelector('.service-button');
+                        if (otherButton) {
+                            otherButton.classList.remove('active');
+                        }
                     });
                     
                     // Активируем текущий элемент
                     currentItem.classList.add('active');
+                    this.classList.add('active');
                 });
             }
         });
     }
     
     // Reviews slider
-    const reviewsTrack = document.querySelector('.reviews__track');
-    const reviewsDotsContainer = document.querySelector('.reviews__dots');
-    const reviewsPrevBtn = document.querySelector('.reviews__btn--prev');
-    const reviewsNextBtn = document.querySelector('.reviews__btn--next');
+    const reviewCards = document.querySelectorAll('.review-card');
+    const reviewDots = document.querySelectorAll('.review-dot');
+    const prevButton = document.querySelector('.review-prev');
+    const nextButton = document.querySelector('.review-next');
     
-    if (reviewsTrack) {
-        // Fetch reviews from API
-        fetch('/static/data/reviews.json')
-            .then(response => response.json())
-            .then(reviews => {
-                // Create review cards
-                reviews.forEach((review, index) => {
-                    const reviewCard = document.createElement('div');
-                    reviewCard.className = 'review-card';
-                    
-                    // Generate stars based on rating
-                    let starsHTML = '';
-                    for (let i = 0; i < review.rating; i++) {
-                        starsHTML += '<span class="review-card__star">★</span>';
-                    }
-                    
-                    reviewCard.innerHTML = `
-                        <div class="review-card__header">
-                            <div class="review-card__info">
-                                <div class="review-card__name">${review.name}</div>
-                                <div class="review-card__position">${review.position}</div>
-                                <div class="review-card__company">${review.company}</div>
-                            </div>
-                            <div class="review-card__rating">
-                                ${starsHTML}
-                            </div>
-                        </div>
-                        <div class="review-card__text">${review.text}</div>
-                        <div class="review-card__date">${review.date}</div>
-                    `;
-                    
-                    reviewsTrack.appendChild(reviewCard);
-                    
-                    // Create dots
-                    if (reviewsDotsContainer) {
-                        const dot = document.createElement('span');
-                        dot.className = index === 0 ? 'reviews__dot is-active' : 'reviews__dot';
-                        dot.dataset.index = index;
-                        reviewsDotsContainer.appendChild(dot);
-                        
-                        dot.addEventListener('click', function() {
-                            currentSlide = parseInt(this.dataset.index);
-                            updateSlider();
-                        });
-                    }
-                });
-                
-                // Set up slider
-                const reviewCards = document.querySelectorAll('.review-card');
-                const dots = document.querySelectorAll('.reviews__dot');
-                let currentSlide = 0;
-                const sliderContainer = reviewsTrack.parentElement;
-                
-                // Функция установки ширины карточек
-                function setCardWidths() {
-                    const containerWidth = sliderContainer.clientWidth;
-                    reviewCards.forEach(card => {
-                        card.style.width = `${containerWidth}px`;
-                    });
-                    // Обновляем общую ширину дорожки
-                    reviewsTrack.style.width = `${containerWidth * reviewCards.length}px`;
-                }
-                
-                // Вызываем функцию установки ширины сразу
-                setCardWidths();
-                
-                // Update slider position
-                function updateSlider() {
-                    const containerWidth = sliderContainer.clientWidth;
-                    reviewsTrack.style.transform = `translateX(-${currentSlide * containerWidth}px)`;
-                    
-                    dots.forEach((dot, index) => {
-                        if (index === currentSlide) {
-                            dot.classList.add('is-active');
-                        } else {
-                            dot.classList.remove('is-active');
-                        }
-                    });
-                }
-                
-                // Add navigation functionality
-                if (reviewsPrevBtn) {
-                    reviewsPrevBtn.addEventListener('click', function() {
-                        currentSlide = (currentSlide > 0) ? currentSlide - 1 : reviewCards.length - 1;
-                        updateSlider();
-                    });
-                }
-                
-                if (reviewsNextBtn) {
-                    reviewsNextBtn.addEventListener('click', function() {
-                        currentSlide = (currentSlide < reviewCards.length - 1) ? currentSlide + 1 : 0;
-                        updateSlider();
-                    });
-                }
-                
-                // Autoplay
-                let slideInterval = setInterval(function() {
-                    currentSlide = (currentSlide < reviewCards.length - 1) ? currentSlide + 1 : 0;
-                    updateSlider();
-                }, 5000);
-                
-                // Pause autoplay on hover
-                reviewsTrack.addEventListener('mouseenter', function() {
-                    clearInterval(slideInterval);
-                });
-                
-                reviewsTrack.addEventListener('mouseleave', function() {
-                    slideInterval = setInterval(function() {
-                        currentSlide = (currentSlide < reviewCards.length - 1) ? currentSlide + 1 : 0;
-                        updateSlider();
-                    }, 5000);
-                });
-                
-                // Update on window resize
-                window.addEventListener('resize', function() {
-                    setCardWidths();
-                    updateSlider();
-                });
-                
-                // Initial call
-                updateSlider();
-            })
-            .catch(error => console.error('Error loading reviews:', error));
-    }
+    if (reviewCards.length) {
+        let currentIndex = 0;
+        let interval;
     
-    // Form submission handling
-    const contactForm = document.getElementById('contactForm');
-    const orderServiceForm = document.getElementById('orderServiceForm');
+        // Показать слайд
+        function showSlide(index) {
+            reviewCards.forEach((card, i) => {
+                card.classList.remove('active');
+                if (i === index) {
+                    card.classList.add('active');
+                }
+            });
     
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            const formObject = {};
-            
-            formData.forEach((value, key) => {
-                formObject[key] = value;
+            reviewDots.forEach((dot, i) => {
+                dot.classList.remove('active');
+                if (i === index) {
+                    dot.classList.add('active');
+                }
+            });
+    
+            currentIndex = index;
+        }
+    
+        // Перейти к следующему слайду
+        function nextSlide() {
+            const newIndex = (currentIndex + 1) % reviewCards.length;
+            showSlide(newIndex);
+        }
+    
+        // Перейти к предыдущему слайду
+        function prevSlide() {
+            const newIndex = (currentIndex - 1 + reviewCards.length) % reviewCards.length;
+            showSlide(newIndex);
+        }
+    
+        // Запуск автопрокрутки
+        function startAutoplay() {
+            // Очистка предыдущего интервала для безопасности
+            if (interval) {
+                clearInterval(interval);
+            }
+            interval = setInterval(nextSlide, 5000);
+        }
+    
+        // Остановка автопрокрутки
+        function stopAutoplay() {
+            clearInterval(interval);
+        }
+    
+        // Обработчики событий для слайдера отзывов
+        if (prevButton && nextButton) {
+            prevButton.addEventListener('click', function() {
+                prevSlide();
+                stopAutoplay();
+                startAutoplay(); // Перезапуск после взаимодействия
             });
             
-            // Here you would normally send data to server
-            console.log('Contact form data:', formObject);
-            
-            // Show success message
-            alert('Спасибо за ваше обращение! Мы свяжемся с вами в ближайшее время.');
-            
-            // Reset form
-            this.reset();
-        });
-    }
-    
-    if (orderServiceForm) {
-        orderServiceForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            const formObject = {};
-            
-            formData.forEach((value, key) => {
-                formObject[key] = value;
+            nextButton.addEventListener('click', function() {
+                nextSlide();
+                stopAutoplay();
+                startAutoplay(); // Перезапуск после взаимодействия
             });
-            
-            // Here you would normally send data to server
-            console.log('Order service form data:', formObject);
-            
-            // Show success message
-            alert('Спасибо за ваш заказ! Мы свяжемся с вами в ближайшее время для уточнения деталей.');
-            
-            // Reset form
-            this.reset();
-        });
-    }
+        }
     
-    // Services section expansion
-    const serviceExpandButtons = document.querySelectorAll('.service-card__more');
-    
-    if (serviceExpandButtons.length) {
-        serviceExpandButtons.forEach(button => {
-            button.addEventListener('click', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                
-                const serviceId = this.closest('.service-card').dataset.service;
-                window.location.href = `/service/${serviceId}`;
+        reviewDots.forEach((dot, i) => {
+            dot.addEventListener('click', () => {
+                showSlide(i);
+                stopAutoplay();
+                startAutoplay(); // Перезапуск после взаимодействия
             });
         });
+    
+        // Остановка автопрокрутки при наведении мыши
+        const reviewSlider = document.querySelector('.review-slider');
+        if (reviewSlider) {
+            reviewSlider.addEventListener('mouseenter', stopAutoplay);
+            reviewSlider.addEventListener('mouseleave', startAutoplay);
+        }
+    
+        // Инициализация слайдера отзывов
+        showSlide(0);
+        startAutoplay();
     }
     
     // Animation on scroll
-    const animatedElements = document.querySelectorAll('.advantage-card, .service-card, .pricing-card, .experience__card, .stages__item');
+    const animatedElements = document.querySelectorAll('.advantage-card, .service-item, .pricing-card, .experience__card, .stages__item');
     
     function checkElements() {
         const triggerBottom = window.innerHeight * 0.8;
