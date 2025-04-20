@@ -148,8 +148,8 @@
 .stages__photo {
     border-radius: 10px;
     overflow: hidden;
-    width: 100%;
-    height: 100%;
+    width:  60%;
+    height: 800px;
     object-fit: cover;
 }
 
@@ -220,6 +220,62 @@
     max-width: 80%;
     margin-left: auto;
     margin-right: auto;
+}
+
+/* Стили для блока с ценами */
+.stages__pricing {
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.stages__pricing-item {
+    flex: 1;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 25px 30px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.stages__pricing-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.stages__pricing-value {
+    font-size: 42px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.stages__pricing-label {
+    font-size: 24px;
+    font-weight: 600;
+    color: #181E2A;
+    margin-bottom: 8px;
+}
+
+.stages__pricing-description {
+    font-size: 16px;
+    color: #666;
+    opacity: 0.9;
+}
+
+/* Media queries для адаптивности блока с ценами */
+@media (max-width: 768px) {
+    .stages__pricing {
+        flex-direction: column;
+        gap: 20px;
+    }
 }
 
 /* Experience section */
@@ -398,6 +454,24 @@
     .footer__wrapper {
         flex-direction: column;
         gap: 30px;
+    }
+    
+    /* Стили для блока с ценами на маленьких экранах */
+    .stages__pricing {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .stages__pricing-item {
+        padding: 20px 15px;
+    }
+    
+    .stages__pricing-value {
+        font-size: 32px;
+    }
+    
+    .stages__pricing-label {
+        font-size: 18px;
     }
 }
 
@@ -1171,37 +1245,45 @@
 /* Responsive styles */
 @media (max-width: 1024px) {
     .stages__wrapper,
-    .cta__wrapper {
+    .advantages__wrapper,
+    .experience__container {
         flex-direction: column;
     }
     
     .stages__img,
-    .stages__content,
-    .cta__content,
-    .cta__form-wrap {
-        flex: 0 0 100%;
+    .advantages__img,
+    .experience__image {
+        margin-top: 40px;
     }
     
     .stages__img {
-        margin-bottom: 40px;
+        max-width: 600px;
     }
     
     .cta__advantages {
-        flex-direction: column;
+        grid-template-columns: 1fr;
     }
     
     .pricing__cards {
-        flex-wrap: wrap;
+        grid-template-columns: repeat(2, 1fr);
     }
     
     .pricing-card {
-        flex: 0 0 calc(50% - 15px);
+        max-width: none;
     }
     
     .pricing-card--featured {
-        flex: 0 0 100%;
-        order: -1;
-        margin-bottom: 30px;
+        transform: translateY(0);
+    }
+    
+    /* Стили для блока с ценами на планшетах и мобильных */
+    .stages__content {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .stages__pricing {
+        margin-top: 30px;
     }
 }
 
