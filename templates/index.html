@@ -168,9 +168,6 @@
         <div class="container">
             <h2 class="section-title"><span class="highlighted-number">5</span> простых шагов для внедрения</h2>
             <div class="stages__wrapper">
-                <div class="stages__img">
-                    <img src="{{ url_for('static', filename='img/5png.png') }}" alt="Команда внедрения" class="stages__photo">
-                </div>
                 <div class="stages__content">
                     <ol class="stages__list">
                         <li class="stages__item">
@@ -213,6 +210,9 @@
                         <h3 class="stages__result-title">Полное внедрение всего за <span class="highlighted-number">30</span> дней</h3>
                     </div>
                 </div>
+                <div class="stages__img">
+                    <img src="{{ url_for('static', filename='img/5png.png') }}" alt="Команда внедрения" class="stages__photo">
+                </div>
             </div>
         </div>
     </section>
@@ -223,6 +223,11 @@
                 <h2 class="section-title white__title">Мы основываемся на личном опыте внедрения 1С</h2>
                 <p class="experience__subtitle">Никакой теории — только проверенные решения, через которые мы прошли сами.</p>
                 <div class="experience__container">
+                    <div class="experience__image">
+                        <div class="experience__image-placeholder">
+                            <img src="{{ url_for('static', filename='img/team_work.png') }}" alt="Наша команда за работой" class="experience__img">
+                        </div>
+                    </div>
                     <div class="experience__content">
                         <div class="experience__card">
                             <h3 class="experience__card-title">Внедрили себе 1С в 2018 году</h3>
@@ -241,11 +246,7 @@
                             <p class="experience__card-desc">Каждое действие — с объяснением. Не "настроили и ушли", а ведем за руку и учим пользоваться.</p>
                         </div>
                     </div>
-                    <div class="experience__image">
-                        <div class="experience__image-placeholder">
-                            <img src="{{ url_for('static', filename='img/team_work.png') }}" alt="Наша команда за работой" class="experience__img">
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </div>
