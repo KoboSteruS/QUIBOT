@@ -148,9 +148,9 @@
 .stages__photo {
     border-radius: 10px;
     overflow: hidden;
-    width: 100%;
+    width: 80%;
     object-fit: cover;
-    max-height: 600px;
+    height: 600px;
 }
 
 .stages__content {
@@ -1040,7 +1040,7 @@
 
 .cta__content {
     width: 100%;
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -1080,6 +1080,7 @@
 
 .cta__list {
     padding-left: 20px;
+    list-style-type: none;
 }
 
 .cta__item {
@@ -1098,7 +1099,6 @@
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background-color: var(--color-secondary);
 }
 
 .cta__form-wrap {
