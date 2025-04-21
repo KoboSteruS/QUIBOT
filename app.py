@@ -2,6 +2,8 @@ from flask import Flask, render_template, jsonify
 import json
 import os
 from loguru import logger
+from werkzeug.middleware.dispatcher import DispatcherMiddleware
+from werkzeug.serving import run_simple
 
 # Настройка логгера
 logger.add("logs/app.log", rotation="500 MB", level="INFO", 
@@ -59,21 +61,24 @@ def server_error(e):
     logger.error(f"Ошибка сервера: {e}")
     return render_template('500.html'), 500
 
+# Оборачиваем твой Flask под /lessons
+application = DispatcherMiddleware(Flask('dummy'), {
+    '/lessons': app
+})
+
 if __name__ == '__main__':
-    # Создаем необходимые директории
     os.makedirs('static/data', exist_ok=True)
     os.makedirs('logs', exist_ok=True)
-    
-    # Проверяем наличие файлов с данными, если их нет, создаем пустые
+
     if not os.path.exists('static/data/services.json'):
         with open('static/data/services.json', 'w', encoding='utf-8') as f:
             json.dump({}, f, ensure_ascii=False)
             logger.info("Создан пустой файл services.json")
-    
+
     if not os.path.exists('static/data/reviews.json'):
         with open('static/data/reviews.json', 'w', encoding='utf-8') as f:
             json.dump([], f, ensure_ascii=False)
             logger.info("Создан пустой файл reviews.json")
-    
+
     logger.info("Приложение запущено")
-    app.run(debug=True) 
+    run_simple('127.0.0.1', 5000, application, use_debugger=True, use_reloader=True)
