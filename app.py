@@ -31,11 +31,7 @@ def load_reviews_data():
         logger.error(f"Ошибка при загрузке данных отзывов: {e}")
         return []
 
-# Добавляем маршрут к корню, который перенаправляет к основному маршруту приложения
-@app.route('/lessons')
-def lessons_index():
-    logger.info("Перенаправление с /lessons на корень")
-    return redirect(url_for('index'))
+# Удаляем маршрут /lessons и его редирект, так как он создает циклическое перенаправление
 
 @app.route('/')
 def index():
@@ -70,14 +66,15 @@ def server_error(e):
 # Настройка приложения для корректной работы под префиксом URL
 # Оборачиваем Flask-приложение для работы с префиксом /lessons без необходимости его указывать в маршрутах
 # Это позволит приложению отвечать на запросы к https://1c.analizator.mp/lessons
-# и автоматически обрабатывать все дочерние маршруты
 dummy_app = Flask('dummy')
 
 # Добавляем к корню пустого приложения редирект на основное приложение
 @dummy_app.route('/')
 def dummy_index():
+    logger.info("Перенаправление с корня на /lessons")
     return redirect('/lessons')
 
+# Создаем диспетчер, который монтирует наше приложение по пути /lessons
 application = DispatcherMiddleware(dummy_app, {
     '/lessons': app
 })
