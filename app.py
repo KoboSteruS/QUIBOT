@@ -33,7 +33,7 @@ def load_reviews_data():
 
 # Удаляем маршрут /lessons и его редирект, так как он создает циклическое перенаправление
 
-@app.route('/')
+@app.route('/lessons')
 def index():
     logger.info("Запрос главной страницы")
     return render_template('index.html')
