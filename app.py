@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, redirect, url_for
 import json
 import os
 from loguru import logger
@@ -31,6 +31,12 @@ def load_reviews_data():
         logger.error(f"Ошибка при загрузке данных отзывов: {e}")
         return []
 
+# Добавляем маршрут к корню, который перенаправляет к основному маршруту приложения
+@app.route('/lessons')
+def lessons_index():
+    logger.info("Перенаправление с /lessons на корень")
+    return redirect(url_for('index'))
+
 @app.route('/')
 def index():
     logger.info("Запрос главной страницы")
@@ -61,8 +67,18 @@ def server_error(e):
     logger.error(f"Ошибка сервера: {e}")
     return render_template('500.html'), 500
 
-# Оборачиваем твой Flask под /lessons
-application = DispatcherMiddleware(Flask('dummy'), {
+# Настройка приложения для корректной работы под префиксом URL
+# Оборачиваем Flask-приложение для работы с префиксом /lessons без необходимости его указывать в маршрутах
+# Это позволит приложению отвечать на запросы к https://1c.analizator.mp/lessons
+# и автоматически обрабатывать все дочерние маршруты
+dummy_app = Flask('dummy')
+
+# Добавляем к корню пустого приложения редирект на основное приложение
+@dummy_app.route('/')
+def dummy_index():
+    return redirect('/lessons')
+
+application = DispatcherMiddleware(dummy_app, {
     '/lessons': app
 })
 
@@ -81,4 +97,4 @@ if __name__ == '__main__':
             logger.info("Создан пустой файл reviews.json")
 
     logger.info("Приложение запущено")
-    run_simple('127.0.0.1', 5000, application, use_debugger=True, use_reloader=True)
+    run_simple('0.0.0.0', 5000, application, use_debugger=True, use_reloader=True)
