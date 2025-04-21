@@ -148,9 +148,9 @@
 .stages__photo {
     border-radius: 10px;
     overflow: hidden;
-    width:  60%;
-    height: 800px;
+    width: 100%;
     object-fit: cover;
+    max-height: 600px;
 }
 
 .stages__content {
@@ -482,7 +482,7 @@
 }
 
 .services__container {
-    padding-left: 225px;
+    max-width: 800px;
     margin: 0 auto;
     transition: all 0.5s ease;
     position: relative;
@@ -498,8 +498,6 @@
 }
 
 .services__cta {
-    margin-left: 200px;
-    width: 405px;
     display: flex;
     justify-content: center;
     margin-top: 40px;
@@ -507,13 +505,13 @@
 }
 
 .service-item {
-    width: 400px;
+    width: 100%;
     position: relative;
     transition: all 0.4s ease;
 }
 
 .service-button {
-    width: 800px;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -556,7 +554,7 @@
 }
 
 .service-content {
-    width: 800px;
+    width: 100%;
     background-color: #FFFFFF;
     border-radius: 0 0 10px 10px;
     padding: 0;
@@ -1034,14 +1032,16 @@
 
 .cta__wrapper {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     gap: 50px;
 }
 
 .cta__content {
-    margin-left: 300px;
-    flex: 0 0 50%;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .cta__title {
@@ -1056,6 +1056,17 @@
     gap: 30px;
 }
 
+@media (max-width: 768px) {
+    .cta__advantages {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .cta__title {
+        font-size: 24px;
+    }
+}
+
 .cta__advantage {
     flex: 1;
 }
@@ -1063,7 +1074,7 @@
 .cta__advantage-title {
     font-size: 20px;
     font-weight: 600;
-    color: var(--color-primary);
+    color: white;
     margin-bottom: 20px;
 }
 
@@ -1330,7 +1341,6 @@
 }
 
 .btn--purple {
-    padding-left: 225px;
     background-color: #6A5ACD;
     color: white;
     padding: 15px 30px;
@@ -1368,4 +1378,367 @@
 
 .whatsapp-button:hover {
     background-color: #128C7E;
+}
+
+/* Стили для основного контента с учетом фиксированной шапки */
+body {
+    padding-top: 70px;  /* Высота шапки */
+}
+
+main {
+    min-height: calc(100vh - 70px);  /* Минимальная высота с учетом шапки */
+}
+
+.hero {
+    padding-top: 50px;
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
+/* Адаптация для секции hero */
+@media (max-width: 768px) {
+    /* Стили для летающих иконок */
+    .hero__icon-container,
+    .hero__lines {
+        display: none !important;
+    }
+    
+    .hero__logo-container {
+        position: static !important;
+        margin: 20px auto;
+        transform: none !important;
+    }
+    
+    .hero__images {
+        height: auto !important;
+        position: relative;
+    }
+    
+    .hero__wrapper {
+        flex-direction: column;
+    }
+    
+    .hero__content {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+}
+
+body.menu-open {
+    overflow: hidden;
+}
+
+.logo__link h2 {
+    color: #fff;
+    margin: 0;
+    font-size: 20px;
+}
+
+/* Затемнение фона при открытом меню */
+.menu-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 990;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+body.menu-open .menu-backdrop {
+    opacity: 1;
+    visibility: visible;
+}
+
+.nav__mobile-actions {
+    display: none;
+}
+
+.mobile-btn {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 250px;
+    font-size: 16px;
+    padding: 12px 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    .logo h2 {
+        font-size: 16px;
+    }
+    
+    .logo__img {
+        height: 30px;
+    }
+    
+    .burger {
+        display: flex;
+        z-index: 1001;
+    }
+    
+    .header__wrapper {
+        position: relative;
+    }
+    
+    .nav {
+        position: fixed;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--color-primary);
+        padding: 0;
+        z-index: 990;
+        transition: top 0.4s ease;
+        height: auto;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .nav.is-active {
+        top: 70px;
+    }
+    
+    .nav__list {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 20px 0;
+    }
+    
+    .nav__mobile-actions {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 20px 30px;
+    }
+}
+
+/* Стили для адаптивной шапки */
+.header {
+    padding: 0;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-primary);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.header__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 15px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo__link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+}
+
+.logo__img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.nav {
+    margin-left: 550px;
+}
+
+.nav__list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 30px;
+}
+
+.nav__link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.nav__link:hover {
+    color: var(--color-secondary);
+}
+
+/* Стили для бургер-меню */
+.burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin-right: 10px;
+    position: relative;
+    z-index: 1001;
+}
+
+.burger__line {
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+/* Анимация бургер-кнопки при активации */
+.burger.is-active .burger__line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.burger.is-active .burger__line:nth-child(2) {
+    opacity: 0;
+}
+
+.burger.is-active .burger__line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Стили для отдельного мобильного меню */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    max-width: 100%;
+    height: 100vh;
+    background-color: var(--color-primary);
+    z-index: 1000;
+    transition: right 0.4s ease;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+}
+
+.mobile-menu.is-active {
+    right: 0;
+}
+
+.mobile-menu__container {
+    padding: 80px 20px 30px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.mobile-menu__list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 40px;
+}
+
+.mobile-menu__item {
+    margin-bottom: 20px;
+}
+
+.mobile-menu__link {
+    display: block;
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 0;
+    transition: var(--transition);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-menu__link:hover {
+    color: var(--color-secondary);
+}
+
+.mobile-menu__actions {
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+}
+
+@media (min-width: 769px) {
+    /* Скрываем бургер-меню на больших экранах */
+    .burger {
+        display: none;
+    }
+    
+    .mobile-menu {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Скрываем обычное меню и показываем бургер-меню на мобильных устройствах */
+    .nav {
+        display: none;
+    }
+    
+    .burger {
+        display: flex;
+    }
+    
+    /* Стили для шапки на мобильных устройствах */
+    .logo h2 {
+        font-size: 16px;
+    }
+    
+    .logo__img {
+        height: 30px;
+    }
+    
+    /* Стили для страницы */
+    body {
+        padding-top: 60px;
+    }
+    
+    .hero {
+        padding-top: 40px;
+    }
+    
+    /* Адаптивные стили для различных компонентов */
+    .stages__photo {
+        max-height: 400px;
+    }
+    
+    .experience__content {
+        grid-template-columns: 1fr;
+    }
+    
+    .pricing__cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .pricing-card {
+        max-width: 100%;
+    }
+    
+    .pricing-card--featured {
+        transform: scale(1);
+    }
+    
+    .pricing-card--featured:hover {
+        transform: translateY(-5px);
+    }
+    
+    .service-features li {
+        padding-left: 25px;
+    }
 } 
