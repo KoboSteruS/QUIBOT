@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>1C:Analizator - Управленческий учёт для селлеров маркетплейсов</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/components.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/animations.css') }}">
+    <link rel="stylesheet" href="{{ url_for('serve_static', filename='css/normalize.css') }}">
+    <link rel="stylesheet" href="{{ url_for('serve_static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('serve_static', filename='css/components.css') }}">
+    <link rel="stylesheet" href="{{ url_for('serve_static', filename='css/animations.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -18,7 +18,7 @@
             <div class="header__wrapper">
                 <div class="logo">
                     <a href="#" class="logo__link">
-                        <img src="{{ url_for('static', filename='img/logo.png') }}" alt="1С:Analizator" class="logo__img">
+                        <img src="{{ url_for('serve_static', filename='img/logo.png') }}" alt="1С:Analizator" class="logo__img">
                         <h2>1С:Analizator</h2>
                     </a>
                 </div>
@@ -66,25 +66,25 @@
                 </div>
                 <div class="hero__images">
                     <div class="hero__icon-container" id="icon1">
-                        <img src="{{ url_for('static', filename='img/finance.png') }}" alt="" class="hero__icon">
+                        <img src="{{ url_for('serve_static', filename='img/finance.png') }}" alt="" class="hero__icon">
                     </div>
                     <div class="hero__icon-container" id="icon2">
-                        <img src="{{ url_for('static', filename='img/Warehouse .png') }}" alt="" class="hero__icon">
+                        <img src="{{ url_for('serve_static', filename='img/Warehouse .png') }}" alt="" class="hero__icon">
                     </div>
                     <div class="hero__icon-container" id="icon3">
-                        <img src="{{ url_for('static', filename='img/Integrations.png') }}" alt="" class="hero__icon">
+                        <img src="{{ url_for('serve_static', filename='img/Integrations.png') }}" alt="" class="hero__icon">
                     </div>
                     <div class="hero__logo-container" id="center-logo">
-                        <img src="{{ url_for('static', filename='img/logo.png') }}" alt="1C:Analizator" class="hero__logo">
+                        <img src="{{ url_for('serve_static', filename='img/logo.png') }}" alt="1C:Analizator" class="hero__logo">
                     </div>
                     <div class="hero__icon-container" id="icon4">
-                        <img src="{{ url_for('static', filename='img/QR.png') }}" alt="" class="hero__icon">
+                        <img src="{{ url_for('serve_static', filename='img/QR.png') }}" alt="" class="hero__icon">
                     </div>
                     <div class="hero__icon-container" id="icon5">
-                        <img src="{{ url_for('static', filename='img/Gear.png') }}" alt="" class="hero__icon">
+                        <img src="{{ url_for('serve_static', filename='img/Gear.png') }}" alt="" class="hero__icon">
                     </div>
                     <div class="hero__icon-container" id="icon6">
-                        <img src="{{ url_for('static', filename='img/account.png') }}" alt="" class="hero__icon">
+                        <img src="{{ url_for('serve_static', filename='img/account.png') }}" alt="" class="hero__icon">
                     </div>
                     <svg class="hero__lines" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
                         <line id="line1" x1="0" y1="0" x2="0" y2="0" stroke="rgba(255,255,255,0.6)" stroke-width="2" />
@@ -106,7 +106,7 @@
                 <div class="advantages__grid">
                     <div class="advantage-card">
                         <div class="advantage-card__icon">
-                            <img src="{{ url_for('static', filename='img/finance.png') }}" alt="" class="advantage-card__img">
+                            <img src="{{ url_for('serve_static', filename='img/finance.png') }}" alt="" class="advantage-card__img">
                         </div>
                         <h3 class="advantage-card__title">Финансы</h3>
                         <ul class="advantage-card__list" style="list-style-type:decimal;color: black;">
@@ -118,7 +118,7 @@
                     </div>
                     <div class="advantage-card">
                         <div class="advantage-card__icon">
-                            <img src="{{ url_for('static', filename='img/Warehouse .png') }}" alt="" class="advantage-card__img">
+                            <img src="{{ url_for('serve_static', filename='img/Warehouse .png') }}" alt="" class="advantage-card__img">
                         </div>
                         <h3 class="advantage-card__title">Складской учет</h3>
                         <ul class="advantage-card__list" style="list-style-type: decimal;color: black;">
@@ -130,7 +130,7 @@
                     </div>
                     <div class="advantage-card">
                         <div class="advantage-card__icon">
-                            <img src="{{ url_for('static', filename='img/Integrations.png') }}" alt="" class="advantage-card__img">
+                            <img src="{{ url_for('serve_static', filename='img/Integrations.png') }}" alt="" class="advantage-card__img">
                         </div>
                         <h3 class="advantage-card__title">Интеграции и API</h3>
                         <ul class="advantage-card__list" style="list-style-type: decimal;color: black;">
@@ -141,7 +141,7 @@
                     </div>
                     <div class="advantage-card">
                         <div class="advantage-card__icon">
-                            <img src="{{ url_for('static', filename='img/QR.png') }}" alt="" class="advantage-card__img">
+                            <img src="{{ url_for('serve_static', filename='img/QR.png') }}" alt="" class="advantage-card__img">
                         </div>
                         <h3 class="advantage-card__title">Честный Знак</h3>
                         <ul class="advantage-card__list" style="list-style-type: decimal;color: black;">
@@ -153,7 +153,7 @@
                     </div>
                     <div class="advantage-card">
                         <div class="advantage-card__icon">
-                            <img src="{{ url_for('static', filename='img/Gear.png') }}" alt="" class="advantage-card__img">
+                            <img src="{{ url_for('serve_static', filename='img/Gear.png') }}" alt="" class="advantage-card__img">
                         </div>
                         <h3 class="advantage-card__title">Производство</h3>
                         <ul class="advantage-card__list" style="list-style-type: decimal;color: black;">
@@ -165,7 +165,7 @@
                     </div>
                     <div class="advantage-card">
                         <div class="advantage-card__icon">
-                            <img src="{{ url_for('static', filename='img/account.png') }}" alt="" class="advantage-card__img">
+                            <img src="{{ url_for('serve_static', filename='img/account.png') }}" alt="" class="advantage-card__img">
                         </div>
                         <h3 class="advantage-card__title">Мультиаккаунтность</h3>
                         <ul class="advantage-card__list" style="list-style-type: decimal;color: black;">
@@ -220,7 +220,7 @@
                     </div>
                 </div>
                 <div class="stages__img">
-                    <img src="{{ url_for('static', filename='img/5png.png') }}" alt="Команда внедрения" class="stages__photo">
+                    <img src="{{ url_for('serve_static', filename='img/5png.png') }}" alt="Команда внедрения" class="stages__photo">
                 </div>
             </div>
         </div>
@@ -234,7 +234,7 @@
                 <div class="experience__container">
                     <div class="experience__image">
                         <div class="experience__image-placeholder">
-                            <img src="{{ url_for('static', filename='img/team_work.png') }}" alt="Наша команда за работой" class="experience__img">
+                            <img src="{{ url_for('serve_static', filename='img/team_work.png') }}" alt="Наша команда за работой" class="experience__img">
                         </div>
                     </div>
                     <div class="experience__content">
@@ -564,7 +564,7 @@
             <div class="footer__wrapper">
                 <div class="footer__column">
                     <a href="#" class="footer__logo">
-                        <img src="{{ url_for('static', filename='img/logo.png') }}" alt="1C:Analizator" class="footer__logo-img">
+                        <img src="{{ url_for('serve_static', filename='img/logo.png') }}" alt="1C:Analizator" class="footer__logo-img">
                     </a>
                     <p class="footer__copyright">© 2024 1C:Analizator. Все права защищены.</p>
                 </div>
@@ -608,6 +608,6 @@
         </div>
     </footer>
 
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="{{ url_for('serve_static', filename='js/script.js') }}"></script>
 </body>
 </html> 

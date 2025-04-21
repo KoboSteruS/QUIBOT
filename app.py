@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify, redirect, url_for
+from flask import Flask, render_template, jsonify, redirect, url_for, send_from_directory
 import json
 import os
 from loguru import logger
@@ -9,7 +9,8 @@ from werkzeug.serving import run_simple
 logger.add("logs/app.log", rotation="500 MB", level="INFO", 
            format="{time:YYYY-MM-DD HH:mm:ss} | {level} | {message}")
 
-app = Flask(__name__)
+# Настраиваем Flask для работы с префиксом URL /lessons
+app = Flask(__name__, static_url_path='/static')
 
 # Загрузка данных из JSON-файла
 def load_services_data():
@@ -38,20 +39,26 @@ def index():
     logger.info("Запрос главной страницы")
     return render_template('index.html')
 
-@app.route('/services')
+@app.route('/lessons/services')
 def all_services():
     logger.info("Запрос страницы со всеми доработками")
     return render_template('all-services.html')
 
-@app.route('/api/services')
+@app.route('/lessons/api/services')
 def get_services():
     logger.info("Запрос API данных услуг")
     return jsonify(load_services_data())
 
-@app.route('/api/reviews')
+@app.route('/lessons/api/reviews')
 def get_reviews():
     logger.info("Запрос API данных отзывов")
     return jsonify(load_reviews_data())
+
+# Добавляем обработчик для статических файлов
+@app.route('/lessons/static/<path:filename>')
+def serve_static(filename):
+    logger.info(f"Запрос статического файла: {filename}")
+    return send_from_directory('static', filename)
 
 @app.errorhandler(404)
 def page_not_found(e):

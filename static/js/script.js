@@ -83,6 +83,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    // Получаем префикс URL из текущего пути
+    const urlPrefix = '/lessons';
+    
     // Smooth scroll for navigation links
     const navLinks = document.querySelectorAll('.nav__link, .mobile-menu__link, .footer__link, .hero__btn, .pricing-card__button');
     
@@ -117,6 +120,13 @@ document.addEventListener('DOMContentLoaded', function() {
                         top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
                     });
+                }
+            } else if (this.getAttribute('href').startsWith('/')) {
+                // Добавляем префикс URL к внутренним ссылкам, если они не начинаются с префикса
+                const href = this.getAttribute('href');
+                if (!href.startsWith(urlPrefix)) {
+                    e.preventDefault();
+                    window.location.href = urlPrefix + href;
                 }
             }
         });
