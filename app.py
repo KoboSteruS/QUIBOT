@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify, redirect, url_for, send_from_directory
+from flask import Flask, render_template, jsonify
 import json
 import os
 from loguru import logger
@@ -9,8 +9,7 @@ from werkzeug.serving import run_simple
 logger.add("logs/app.log", rotation="500 MB", level="INFO", 
            format="{time:YYYY-MM-DD HH:mm:ss} | {level} | {message}")
 
-# Настраиваем Flask для работы с префиксом URL /lessons
-app = Flask(__name__, static_url_path='/static')
+app = Flask(__name__)
 
 # Загрузка данных из JSON-файла
 def load_services_data():
@@ -32,33 +31,25 @@ def load_reviews_data():
         logger.error(f"Ошибка при загрузке данных отзывов: {e}")
         return []
 
-# Удаляем маршрут /lessons и его редирект, так как он создает циклическое перенаправление
-
-@app.route('/lessons')
+@app.route('/')
 def index():
     logger.info("Запрос главной страницы")
     return render_template('index.html')
 
-@app.route('/lessons/services')
+@app.route('/services')
 def all_services():
     logger.info("Запрос страницы со всеми доработками")
     return render_template('all-services.html')
 
-@app.route('/lessons/api/services')
+@app.route('/api/services')
 def get_services():
     logger.info("Запрос API данных услуг")
     return jsonify(load_services_data())
 
-@app.route('/lessons/api/reviews')
+@app.route('/api/reviews')
 def get_reviews():
     logger.info("Запрос API данных отзывов")
     return jsonify(load_reviews_data())
-
-# Добавляем обработчик для статических файлов
-@app.route('/lessons/static/<path:filename>')
-def serve_static(filename):
-    logger.info(f"Запрос статического файла: {filename}")
-    return send_from_directory('static', filename)
 
 @app.errorhandler(404)
 def page_not_found(e):
@@ -70,19 +61,8 @@ def server_error(e):
     logger.error(f"Ошибка сервера: {e}")
     return render_template('500.html'), 500
 
-# Настройка приложения для корректной работы под префиксом URL
-# Оборачиваем Flask-приложение для работы с префиксом /lessons без необходимости его указывать в маршрутах
-# Это позволит приложению отвечать на запросы к https://1c.analizator.mp/lessons
-dummy_app = Flask('dummy')
-
-# Добавляем к корню пустого приложения редирект на основное приложение
-@dummy_app.route('/')
-def dummy_index():
-    logger.info("Перенаправление с корня на /lessons")
-    return redirect('/lessons')
-
-# Создаем диспетчер, который монтирует наше приложение по пути /lessons
-application = DispatcherMiddleware(dummy_app, {
+# Оборачиваем твой Flask под /lessons
+application = DispatcherMiddleware(Flask('dummy'), {
     '/lessons': app
 })
 
@@ -101,4 +81,4 @@ if __name__ == '__main__':
             logger.info("Создан пустой файл reviews.json")
 
     logger.info("Приложение запущено")
-    run_simple('0.0.0.0', 5000, application, use_debugger=True, use_reloader=True)
+    run_simple('127.0.0.1', 5000, application, use_debugger=True, use_reloader=True)
