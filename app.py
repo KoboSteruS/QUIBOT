@@ -2,8 +2,6 @@ from flask import Flask, render_template, jsonify
 import json
 import os
 from loguru import logger
-from werkzeug.middleware.dispatcher import DispatcherMiddleware
-from werkzeug.serving import run_simple
 
 # Настройка логгера
 logger.add("logs/app.log", rotation="500 MB", level="INFO", 
@@ -61,11 +59,6 @@ def server_error(e):
     logger.error(f"Ошибка сервера: {e}")
     return render_template('500.html'), 500
 
-# Оборачиваем Flask-приложение для работы на корневом пути
-application = DispatcherMiddleware(Flask('dummy'), {
-    '/': app
-})
-
 if __name__ == '__main__':
     os.makedirs('static/data', exist_ok=True)
     os.makedirs('logs', exist_ok=True)
@@ -81,4 +74,4 @@ if __name__ == '__main__':
             logger.info("Создан пустой файл reviews.json")
 
     logger.info("Приложение запущено")
-    run_simple('127.0.0.1', 5000, application, use_debugger=True, use_reloader=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
