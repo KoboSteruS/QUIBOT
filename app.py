@@ -61,9 +61,9 @@ def server_error(e):
     logger.error(f"Ошибка сервера: {e}")
     return render_template('500.html'), 500
 
-# Оборачиваем твой Flask под /lessons
+# Оборачиваем Flask-приложение для работы на корневом пути
 application = DispatcherMiddleware(Flask('dummy'), {
-    '/lessons': app
+    '/': app
 })
 
 if __name__ == '__main__':
