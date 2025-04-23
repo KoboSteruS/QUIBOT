@@ -24,9 +24,10 @@
                 </div>
                 <nav class="nav">
                     <ul class="nav__list">
-                        <li class="nav__item"><a href="#about" class="nav__link">О нас</a></li>
+                        
                         <li class="nav__item"><a href="#advantages" class="nav__link">О продукте</a></li>
                         <li class="nav__item"><a href="#stages" class="nav__link">Внедрение</a></li>
+                        <li class="nav__item"><a href="#experience" class="nav__link">О нас</a></li>
                         <li class="nav__item"><a href="#pricing" class="nav__link">Стоимость</a></li>
                     </ul>
                 </nav>
@@ -43,7 +44,7 @@
     <div class="mobile-menu">
         <div class="mobile-menu__container">
             <ul class="mobile-menu__list">
-                <li class="mobile-menu__item"><a href="#about" class="mobile-menu__link">О нас</a></li>
+                <li class="mobile-menu__item"><a href="#experience" class="mobile-menu__link">О нас</a></li>
                 <li class="mobile-menu__item"><a href="#advantages" class="mobile-menu__link">О продукте</a></li>
                 <li class="mobile-menu__item"><a href="#stages" class="mobile-menu__link">Внедрение</a></li>
                 <li class="mobile-menu__item"><a href="#pricing" class="mobile-menu__link">Стоимость</a></li>
@@ -196,19 +197,26 @@
                         <li class="stages__item">
                             <span class="stages__number">2</span>
                             <div class="stages__info">
-                                <h3 class="stages__title">Техническая настройка — До 7 дней</h3>
+                                <h3 class="stages__title">Устновка и настройка — До 2 дней</h3>
                                 <p class="stages__desc">Быстрая настройка системы, настройка интеграций с маркетплейсами</p>
                             </div>
                         </li>
                         <li class="stages__item">
                             <span class="stages__number">3</span>
                             <div class="stages__info">
+                                <h3 class="stages__title">Перенос и загрузка данных — До 3 дней</h3>
+                                <p class="stages__desc">Импорт остатков, номенклатуры, контрагентов, финансов и пр.</p>
+                            </div>
+                        </li>
+                        <li class="stages__item">
+                            <span class="stages__number">4</span>
+                            <div class="stages__info">
                                 <h3 class="stages__title">Обучение сотрудников — 2 дня</h3>
                                 <p class="stages__desc">Проведение обучения для вашей команды, подготовка инструкций</p>
                             </div>
                         </li>
                         <li class="stages__item">
-                            <span class="stages__number">4</span>
+                            <span class="stages__number">5</span>
                             <div class="stages__info">
                                 <h3 class="stages__title">Сопровождение запуска — 3 недели онлайн-поддержки</h3>
                                 <p class="stages__desc">Бесплатное сопровождение в первые недели использования системы</p>
@@ -322,36 +330,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="service-item" data-service="purchases">
-                        <button class="service-button">
-                            Закупки
-                            <span class="arrow">›</span>
-                        </button>
-                        <div class="service-content">
-                            <div class="service-features">
-                                <p>Автоматическое формирование заказов поставщикам</p>
-                                <p>Контроль цен и условий поставки</p>
-                                <p>Планирование закупок на основе прогноза продаж</p>
-                                <p>Учет и контроль транспортных расходов</p>
-                                <p>Отслеживание статусов поставок</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="service-item" data-service="personnel">
-                        <button class="service-button">
-                            Персонал
-                            <span class="arrow">›</span>
-                        </button>
-                        <div class="service-content">
-                            <div class="service-features">
-                                <p>Учет рабочего времени сотрудников</p>
-                                <p>Расчет заработной платы и премий</p>
-                                <p>Распределение задач и контроль выполнения</p>
-                                <p>KPI и эффективность работы</p>
-                                <p>Интеграция с HRM системами</p>
-                            </div>
-                        </div>
-                    </div>
                     <div class="service-item" data-service="additional">
                         <button class="service-button">
                             Финансы
@@ -411,44 +389,92 @@
         <div class="container">
             <div class="cta__wrapper">
                 <div class="cta__content">
-                    <h2 class="cta__title">Преимущества работы с нами</h2>
-                    <div class="cta__advantages">
-                        <div class="cta__advantage">
-                            <h3 class="cta__advantage-title">1. Быстрый старт</h3>
-                            <ul class="cta__list">
-                                <li class="cta__item">Запуск за 30 дней — вместо месяцев проб и ошибок.</li>
-                            </ul>
+                    <h2 class="cta__title">Готовы автоматизировать свой бизнес?</h2>
+                    <p class="cta__subtitle">Свяжитесь с нами, чтобы получить консультацию и начать внедрение</p>
+                    
+                    <div class="cta__advantages-grid">
+                        <div class="cta__advantage-card">
+                            <div class="cta__advantage-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M7.75 12L10.58 14.83L16.25 9.17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="cta__advantage-content">
+                                <h3 class="cta__advantage-title">Быстрый старт</h3>
+                                <p class="cta__advantage-text">Запуск за 30 дней — вместо месяцев проб и ошибок</p>
+                            </div>
                         </div>
-                        <div class="cta__advantage">
-                            <h3 class="cta__advantage-title">2. Готовое решение</h3>
-                            <ul class="cta__list">
-                                <li class="cta__item">Разработка подобной системы стоит от 1,5млн. (Не включая проектирование, тестирование, устранение ошибок)</li>
-                            </ul>
+                        
+                        <div class="cta__advantage-card">
+                            <div class="cta__advantage-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M12 8V13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M9 2L3 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M15 2L21 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="cta__advantage-content">
+                                <h3 class="cta__advantage-title">Готовое решение</h3>
+                                <p class="cta__advantage-text">Разработка подобной системы стоит от 1,5млн. (Не включая проектирование, тестирование, устранение ошибок)</p>
+                            </div>
                         </div>
-                        <div class="cta__advantage">
-                            <h3 class="cta__advantage-title">3. Проверенный опыт</h3>
-                            <ul class="cta__list">
-                                <li class="cta__item">Учитываем наш путь и кейсы клиентов — вы не наступаете на чужие грабли.</li>
-                            </ul>
+                        
+                        <div class="cta__advantage-card">
+                            <div class="cta__advantage-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10.5 22H13.5C18 22 22 18 22 13.5V10.5C22 6 18 2 13.5 2H10.5C6 2 2 6 2 10.5V13.5C2 18 6 22 10.5 22Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M16.35 8C15.8 7.5 15.15 7.16 14.45 6.99C13.74 6.82 13 6.82 12.3 6.97C11.6 7.13 10.95 7.44 10.38 7.88C9.81 8.32 9.35 8.88 9.04 9.51C8.73 10.14 8.58 10.84 8.6 11.54C8.62 12.24 8.81 12.93 9.16 13.54C9.5 14.16 9.98 14.69 10.58 15.09C11.17 15.49 11.85 15.75 12.56 15.85" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M17.5 11C17.5 14.04 15.04 16.5 12 16.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="cta__advantage-content">
+                                <h3 class="cta__advantage-title">Проверенный опыт</h3>
+                                <p class="cta__advantage-text">Учитываем наш путь и кейсы клиентов — вы не наступаете на чужие грабли.</p>
+                            </div>
                         </div>
-                        <div class="cta__advantage">
-                            <h3 class="cta__advantage-title">4. Обучение в комплекте</h3>
-                            <ul class="cta__list">
-                                <li class="cta__item">Готовые материалы для быстрой адаптации сотрудников.</li>
-                            </ul>
+                        
+                        <div class="cta__advantage-card">
+                            <div class="cta__advantage-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8 2V5" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M16 2V5" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M3.5 9.09H20.5" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M21 8.5V17C21 20 19.5 22 16 22H8C4.5 22 3 20 3 17V8.5C3 5.5 4.5 3.5 8 3.5H16C19.5 3.5 21 5.5 21 8.5Z" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M15.6947 13.7H15.7037" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M15.6947 16.7H15.7037" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M11.9955 13.7H12.0045" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M11.9955 16.7H12.0045" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M8.29431 13.7H8.30329" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M8.29431 16.7H8.30329" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="cta__advantage-content">
+                                <h3 class="cta__advantage-title">Обучение в комплекте</h3>
+                                <p class="cta__advantage-text">Готовые материалы для быстрой адаптации сотрудников.</p>
+                            </div>
                         </div>
-                        <div class="cta__advantage">
-                            <h3 class="cta__advantage-title">5. Живая поддержка</h3>
-                            <ul class="cta__list">
-                                <li class="cta__item">Отвечаем, подсказываем, решаем. Всегда рядом.</li>
-                            </ul>
+                        
+                        <div class="cta__advantage-card">
+                            <div class="cta__advantage-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17 18.43H13L8.54999 21.39C7.88999 21.83 7 21.36 7 20.56V18.43C4 18.43 2 16.43 2 13.43V7.42993C2 4.42993 4 2.42993 7 2.42993H17C20 2.42993 22 4.42993 22 7.42993V13.43C22 16.43 20 18.43 17 18.43Z" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M12 11.36V11.15C12 10.47 12.42 10.11 12.84 9.82001C13.25 9.54001 13.66 9.18002 13.66 8.52002C13.66 7.60002 12.92 6.85999 12 6.85999C11.08 6.85999 10.34 7.60002 10.34 8.52002" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M11.9945 13.75H12.0035" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="cta__advantage-content">
+                                <h3 class="cta__advantage-title">Живая поддержка</h3>
+                                <p class="cta__advantage-text">Всегда отвечаем и помогаем решать вопросы</p>
+                            </div>
                         </div>
+                    </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
 
     <!-- Блок с тарифами -->
     <section class="pricing section-light-bg " id="pricing">
@@ -456,6 +482,18 @@
             <h2 class="pricing__title">Тарифные планы</h2>
             <p class="pricing__desc">Выберите оптимальный план для вашего бизнеса, который лучше всего соответствует вашим потребностям</p>
             <div class="pricing-cards">
+                <div class="pricing-card">
+                    <h3 class="pricing-card__title">Комплексное внедрение</h3>
+                    <div class="pricing-card__price">от 500.000₽</div>
+                    <span class="pricing-card__period">полный комплекс услуг</span>
+                    <ul class="pricing-card__features">
+                        <li class="pricing-card__features-item">Аудит</li>
+                        <li class="pricing-card__features-item">Настройка </li>
+                        <li class="pricing-card__features-item">Обучение</li>
+                        <li class="pricing-card__features-item">Сопровождение</li>
+                    </ul>
+                    <a href="#contact" class="btn btn--primary btn-highlighted pricing-card__button">Заказать</a>
+                </div>
                 <div class="pricing-card">
                     <h3 class="pricing-card__title">Техническая поддержка</h3>
                     <div class="pricing-card__price">35 000 ₽/мес</div>
@@ -468,19 +506,7 @@
                     </ul>
                     <a href="#contact" class="btn btn--secondary pricing-card__button">Заказать</a>
                 </div>
-                <div class="pricing-card pricing-card--highlighted">
-                    <span class="pricing-card__badge">Популярный</span>
-                    <h3 class="pricing-card__title">Комплексное внедрение</h3>
-                    <div class="pricing-card__price">от 500.000₽</div>
-                    <span class="pricing-card__period">полный комплекс услуг</span>
-                    <ul class="pricing-card__features">
-                        <li class="pricing-card__features-item">Аудит</li>
-                        <li class="pricing-card__features-item">Настройка </li>
-                        <li class="pricing-card__features-item">Обучение</li>
-                        <li class="pricing-card__features-item">Сопровождение</li>
-                    </ul>
-                    <a href="#contact" class="btn btn--primary btn-highlighted pricing-card__button">Заказать</a>
-                </div>
+
                 <div class="pricing-card">
                     <h3 class="pricing-card__title">Аренда сервера для 1С </h3>
                     <div class="pricing-card__price">от 3.000₽</div>

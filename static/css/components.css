@@ -316,15 +316,15 @@
 }
 
 .experience__image-placeholder {
-    width: 100%;
+    width: 80%;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
 .experience__img {
-    width: 100%;
-    height: auto;
+    width: 95%;
+    height: 618px;
     display: block;
 }
 
@@ -449,11 +449,6 @@
     
     .cta__advantage-title {
         font-size: 18px;
-    }
-    
-    .footer__wrapper {
-        flex-direction: column;
-        gap: 30px;
     }
     
     /* Стили для блока с ценами на маленьких экранах */
@@ -1025,141 +1020,188 @@
 
 /* CTA section */
 .cta {
+    position: relative;
     padding: 80px 0;
     background-color: #181E2A;
-    text-align: center;
+    color: #fff;
+}
+
+/* Убираем дублирование со стилями section-dark-bg */
+.cta .container {
+    position: relative;
+    z-index: 2; /* Сохраняем z-index для контента */
 }
 
 .cta__wrapper {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 50px;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: flex-start;
+    justify-content: space-between;
 }
 
 .cta__content {
-    width: 100%;
-    max-width: 1200px;
+    flex: 1;
+    min-width: 320px;
     margin: 0 auto;
+    max-width: 1000px;
 }
 
 .cta__title {
-    font-size: 32px;
+    font-size: 36px;
     font-weight: 700;
-    color: white;
-    margin-bottom: 30px;
-}
-
-.cta__advantages {
-    display: flex;
-    gap: 30px;
-}
-
-@media (max-width: 768px) {
-    .cta__advantages {
-        flex-direction: column;
-        gap: 20px;
-    }
-    
-    .cta__title {
-        font-size: 24px;
-    }
-}
-
-.cta__advantage {
-    flex: 1;
-}
-
-.cta__advantage-title {
-    font-size: 20px;
-    font-weight: 600;
-    color: white;
     margin-bottom: 20px;
-}
-
-.cta__list {
-    padding-left: 20px;
-    list-style-type: none;
-}
-
-.cta__item {
-    position: relative;
-    padding-left: 15px;
-    margin-bottom: 15px;
-    font-size: 16px;
-    color: white;
-}
-
-.cta__item::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 10px;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-}
-
-.cta__form-wrap {
-    flex: 0 0 40%;
-}
-
-.cta__form {
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 40px;
-    box-shadow: var(--shadow-card);
-}
-
-.cta__form-title {
-    font-size: 24px;
-    font-weight: 600;
-    color: var(--color-primary);
-    margin-bottom: 30px;
+    color: #fff;
     text-align: center;
 }
 
-.cta__form-group {
-    margin-bottom: 20px;
+.cta__subtitle {
+    font-size: 18px;
+    margin-bottom: 40px;
+    opacity: 0.8;
+    text-align: center;
 }
 
-.cta__input,
-.cta__textarea {
-    width: 100%;
-    padding: 12px 15px;
-    border: 1px solid var(--color-border);
-    border-radius: 5px;
-    transition: var(--transition);
+.cta__advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+    margin-bottom: 40px;
 }
 
-.cta__input:focus,
-.cta__textarea:focus {
-    border-color: var(--color-secondary);
-    outline: none;
-}
-
-.cta__checkbox-label {
+.cta__advantage-card {
+    background: rgba(255, 255, 255, 0.05); /* Более темный фон карточек */
+    border-radius: 12px;
+    padding: 24px;
+    transition: all 0.3s ease;
     display: flex;
     align-items: flex-start;
-    cursor: pointer;
+    gap: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08); /* Тонкая граница */
 }
 
-.cta__checkbox {
-    margin-right: 10px;
-    margin-top: 3px;
+.cta__advantage-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.15);
 }
 
-.cta__checkbox-text {
-    font-size: 14px;
-    color: var(--color-text-light);
+.cta__advantage-icon {
+    color: var(--accent-color);
+    flex-shrink: 0;
 }
 
-.cta__submit {
-    width: 100%;
-    padding: 15px;
+.cta__advantage-content {
+    flex-grow: 1;
+}
+
+.cta__advantage-title {
     font-size: 18px;
     font-weight: 600;
+    margin-bottom: 8px;
+    color: #fff;
+}
+
+.cta__advantage-text {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.5;
+}
+
+.cta__contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-top: 40px;
+}
+
+.cta__contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.cta__contact-item:hover {
+    background: rgba(255, 255, 255, 0.12);
+    transform: translateY(-2px);
+}
+
+.cta__contact-item svg {
+    color: var(--accent-color);
+}
+
+@media (max-width: 1024px) {
+    .cta__wrapper {
+        flex-direction: column;
+    }
+
+    .cta__content {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .cta {
+        padding: 60px 0;
+    }
+
+    .cta__title {
+        font-size: 28px;
+    }
+
+    .cta__subtitle {
+        font-size: 16px;
+        margin-bottom: 32px;
+    }
+
+    .cta__advantages-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cta__advantage-card {
+        padding: 20px;
+    }
+    
+    .cta__contacts {
+        gap: 12px;
+    }
+    
+    .cta__contact-item {
+        width: 100%;
+        justify-content: center;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cta {
+        padding: 40px 0;
+    }
+
+    .cta__title {
+        font-size: 24px;
+    }
+
+    .cta__advantage-card {
+        padding: 16px;
+    }
+
+    .cta__advantage-title {
+        font-size: 16px;
+    }
+
+    .cta__advantage-text {
+        font-size: 14px;
+    }
 }
 
 /* Footer */
@@ -1172,7 +1214,8 @@
 .footer__wrapper {
     display: flex;
     flex-wrap: wrap;
-    gap: 40px;
+    flex-direction: column;
+    gap: 30px;
 }
 
 .footer__column {
