@@ -11,6 +11,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon.png') }}?v=7" sizes="98x98">
+    <link rel="alternate icon" type="image/x-icon" href="{{ url_for('static', filename='img/favicon.ico') }}?v=7">
 </head>
 <body>
     <header class="header">
@@ -19,7 +22,7 @@
                 <div class="logo">
                     <a href="#" class="logo__link">
                         <img src="{{ url_for('static', filename='img/logo.png') }}" alt="1С:Analizator" class="logo__img">
-                        <h2>1С:Analizator</h2>
+                        <h2>QUIBOT</h2>
                     </a>
                 </div>
                 <nav class="nav">
@@ -61,9 +64,9 @@
         <div class="container">
             <div class="hero__wrapper">
                 <div class="hero__content">
-                    <h1 class="hero__title"><b>1C:Analizator</b> - Управленческий учёт для селлеров маркетплейсов</h1>
-                    <p class="hero__subtitle">Один инструмент вместо десятков файлов и хаоса</p>
-                    <a href="https://t.me/Yakushev_Mikhail" class="btn btn--primary hero__btn">Получить консультацию</a>
+                    <h1 class="hero__title"><b>QUIBOT</b> — Your Next-Generation Digital Employee</h1>
+                    <p class="hero__subtitle">Our mission is to help businesses fully automate operations by shifting repetitive tasks to artificial intelligence. Work smarter, faster, and error-free.</p>
+                    <a href="https://t.me/Yakushev_Mikhail" class="btn btn--primary hero__btn">Watch Demo</a>
                 </div>
                 <div class="hero__images">
                     <div class="hero__icon-container" id="icon1">
@@ -100,131 +103,43 @@
         </div>
     </section>
 
-    <section class="advantages section-dark-bg" id="advantages">
+    <section class="stages section-light-bg section-dark-bg" id="stages">
         <div class="container">
-            <div class="advantages__wrapper">
-                <h2 class="section-title white__title">Вы больше не теряетесь в таблицах и личных кабинетах — всё в одной системе:</h2>
-                <div class="advantages__grid">
-                    <div class="advantage-card">
-                        <div class="advantage-card__icon">
-                            <img src="{{ url_for('static', filename='img/finance.png') }}" alt="" class="advantage-card__img">
-                        </div>
-                        <h3 class="advantage-card__title">Финансы</h3>
-                        <ul class="advantage-card__list" style="list-style-type:decimal;color: black;">
-                            <li>Финансовые отчёты: PnL, ДДС, Баланс</li>
-                            <li>Учёт денежных средств в разрезе касс и расчётных счетов</li>
-                            <li>Учет валютных операций и курсовых разниц</li>
-                            <li>Управление взаиморасчётами с контрагентами</li>
-                        </ul>
-                    </div>
-                    <div class="advantage-card">
-                        <div class="advantage-card__icon">
-                            <img src="{{ url_for('static', filename='img/Warehouse .png') }}" alt="" class="advantage-card__img">
-                        </div>
-                        <h3 class="advantage-card__title">Складской учет</h3>
-                        <ul class="advantage-card__list" style="list-style-type: decimal;color: black;">
-                            <li>Учёт остатков по складам</li>
-                            <li>Резервирование товаров</li>
-                            <li>Инвентаризация</li>
-                            <li>Работа по FBS</li>
-                        </ul>
-                    </div>
-                    <div class="advantage-card">
-                        <div class="advantage-card__icon">
-                            <img src="{{ url_for('static', filename='img/Integrations.png') }}" alt="" class="advantage-card__img">
-                        </div>
-                        <h3 class="advantage-card__title">Интеграции и API</h3>
-                        <ul class="advantage-card__list" style="list-style-type: decimal;color: black;">
-                            <li>Автоматическая загрузка отчетов реализации (WB, Ozon)</li>
-                            <li>API для сайтов и мобильных приложений</li>
-                            <li>Автоматическая загрузка выписок из банков</li>
-                        </ul>
-                    </div>
-                    <div class="advantage-card">
-                        <div class="advantage-card__icon">
-                            <img src="{{ url_for('static', filename='img/QR.png') }}" alt="" class="advantage-card__img">
-                        </div>
-                        <h3 class="advantage-card__title">Честный Знак</h3>
-                        <ul class="advantage-card__list" style="list-style-type: decimal;color: black;">
-                            <li>Ввод в оборот, отгрузка и списание маркированных товаров</li>
-                            <li>Повторная печать КИЗов</li>
-                            <li>Проверка КИЗов при отгрузке</li>
-                            <li>Печать QR кода и инфо о товаре на одной этикетках</li>
-                        </ul>
-                    </div>
-                    <div class="advantage-card">
-                        <div class="advantage-card__icon">
-                            <img src="{{ url_for('static', filename='img/Gear.png') }}" alt="" class="advantage-card__img">
-                        </div>
-                        <h3 class="advantage-card__title">Производство</h3>
-                        <ul class="advantage-card__list" style="list-style-type: decimal;color: black;">
-                            <li>Расчёт себестоимости</li>
-                            <li>Сдельные наряды</li>
-                            <li>Работа с аутсорсом (в т.ч. на давальческом сырье)</li>
-                            <li>Учёт полуфабрикатов</li>
-                        </ul>
-                    </div>
-                    <div class="advantage-card">
-                        <div class="advantage-card__icon">
-                            <img src="{{ url_for('static', filename='img/account.png') }}" alt="" class="advantage-card__img">
-                        </div>
-                        <h3 class="advantage-card__title">Мультиаккаунтность</h3>
-                        <ul class="advantage-card__list" style="list-style-type: decimal;color: black;">
-                            <li>Работа с несколькими ЛК на разных ЮЛ</li>
-                            <li>Поддержка разных ШК (Баркод) для разных ЛК</li>
-                            <li>Хранение сертификатов качества и соответствия</li>
-                            <li>Аналитика в разрезе ЮЛ, Бренда, Артикула</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="stages section-light-bg " id="stages">
-        <div class="container">
-            <h2 class="section-title"><span class="highlighted-number">5</span> простых шагов для внедрения</h2>
+            <h2 class="section-title">How We Work</h2>
             <div class="stages__wrapper">
                 <div class="stages__content">
                     <ol class="stages__list">
                         <li class="stages__item">
                             <span class="stages__number">1</span>
                             <div class="stages__info">
-                                <h3 class="stages__title">Аудит и план внедрения — 1 день</h3>
-                                <p class="stages__desc">Анализ вашей работы на маркетплейсах, определение основных бизнес-процессов</p>
+                                <h3 class="stages__title">You submit a request</h3>
+                                <p class="stages__desc">Quick onboarding — tell us your pain points and goals.</p>
                             </div>
                         </li>
                         <li class="stages__item">
                             <span class="stages__number">2</span>
                             <div class="stages__info">
-                                <h3 class="stages__title">Устновка и настройка — До 2 дней</h3>
-                                <p class="stages__desc">Быстрая настройка системы, настройка интеграций с маркетплейсами</p>
+                                <h3 class="stages__title">We design the right solution for your business</h3>
+                                <p class="stages__desc">We map your processes and design the ideal automation path.</p>
                             </div>
                         </li>
                         <li class="stages__item">
                             <span class="stages__number">3</span>
                             <div class="stages__info">
-                                <h3 class="stages__title">Перенос и загрузка данных — До 3 дней</h3>
-                                <p class="stages__desc">Импорт остатков, номенклатуры, контрагентов, финансов и пр.</p>
+                                <h3 class="stages__title">We develop your custom AI system</h3>
+                                <p class="stages__desc">Custom development using the best AI tools on the market.</p>
                             </div>
                         </li>
                         <li class="stages__item">
                             <span class="stages__number">4</span>
                             <div class="stages__info">
-                                <h3 class="stages__title">Обучение сотрудников — 2 дня</h3>
-                                <p class="stages__desc">Проведение обучения для вашей команды, подготовка инструкций</p>
-                            </div>
-                        </li>
-                        <li class="stages__item">
-                            <span class="stages__number">5</span>
-                            <div class="stages__info">
-                                <h3 class="stages__title">Сопровождение запуска — 3 недели онлайн-поддержки</h3>
-                                <p class="stages__desc">Бесплатное сопровождение в первые недели использования системы</p>
+                                <h3 class="stages__title">We integrate and support it</h3>
+                                <p class="stages__desc">Integration, staff onboarding, ongoing monitoring and updates.</p>
                             </div>
                         </li>
                     </ol>
                     <div class="stages__result">
-                        <h3 class="stages__result-title">Полное внедрение всего за <span class="highlighted-number">30</span> дней</h3>
+                        <h3 class="stages__result-title">Full develop usually within<span class="highlighted-number">7–14</span> days.</h3>
                     </div>
                 </div>
                 <div class="stages__img">
@@ -233,12 +148,57 @@
             </div>
         </div>
     </section>
+<!-- 
+    <section class="advantages section-dark-bg" id="advantages">
+        <div class="container">
+            <div class="advantages__wrapper">
+                <h2 class="section-title white__title">Вы больше не теряетесь в таблицах и личных кабинетах — всё в одной системе:</h2>
+                <div class="advantages__grid">
+                    <div class="advantage-card">
+                        <div class="advantage-card__icon">
+                            <h1>🕐</h1>
+                        </div>
+                        <h1 class="advantage-card__title">Operates 24/7</h1>
+                        <ul class="advantage-card__list" style="list-style-type:decimal;color: black;">
+                            <li>no breaks, no sick days</li>
+                        </ul>
+                    </div>
+                    <div class="advantage-card">
+                        <div class="advantage-card__icon">
+                            <img src="{{ url_for('static', filename='img/Warehouse .png') }}" alt="" class="advantage-card__img">
+                        </div>
+                        <h3 class="advantage-card__title">Eliminates human errors and data loss</h3>
+                    </div>
+                    <div class="advantage-card">
+                        <div class="advantage-card__icon">
+                            <img src="{{ url_for('static', filename='img/Integrations.png') }}" alt="" class="advantage-card__img">
+                        </div>
+                        <h3 class="advantage-card__title">Significantly reduces staffing costs</h3>
+                    </div>
+                    <div class="advantage-card">
+                        <div class="advantage-card__icon">
+                            <img src="{{ url_for('static', filename='img/QR.png') }}" alt="" class="advantage-card__img">
+                        </div>
+                        <h3 class="advantage-card__title"> Easily integrates with your current systems</h3>
+
+                    </div>
+                    <div class="advantage-card">
+                        <div class="advantage-card__icon">
+                            <img src="{{ url_for('static', filename='img/Gear.png') }}" alt="" class="advantage-card__img">
+                        </div>
+                        <h3 class="advantage-card__title">Scales effortlessly as your business grows</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+
 
     <section class="experience section-dark-bg" id="experience">
         <div class="container">
             <div class="experience__wrapper">
-                <h2 class="section-title white__title">Мы основываемся на личном опыте внедрения 1С</h2>
-                <p class="experience__subtitle">Никакой теории — только проверенные решения, через которые мы прошли сами.</p>
+                <p class="experience__subtitle">Why QUIBOT Outperforms Human Staff</p>
                 <div class="experience__container">
                     <div class="experience__image">
                         <div class="experience__image-placeholder">
@@ -247,23 +207,21 @@
                     </div>
                     <div class="experience__content">
                         <div class="experience__card">
-                            <h3 class="experience__card-title">7 лет опыта</h3>
-                            <p class="experience__card-desc">В 2018г. мы начали внедрять себе 1С. Было дорого, сложно и не всегда успешно — дважды начинали с нуля. Этот опыт помог нам создать действительно работающий инструмент.</p>
+                            <h3 class="experience__card-title">Operates 24/7 — no breaks, no sick days</h3>
                         </div>
                         <div class="experience__card">
-                            <h3 class="experience__card-title">>10 млн.₽</h3>
-                            <p class="experience__card-desc">Мы инвестировали в развитие нашей системы с момента внедрения, адаптировав её под реальные задачи бизнеса. Каждая доработка — это результат опыта, обратной связи и практики. </p>
+                            <h3 class="experience__card-title">>Eliminates human errors and data loss</h3>
                         </div>
                         <div class="experience__card">
-                            <h3 class="experience__card-title">50+ доработанных процессов</h3>
-                            <p class="experience__card-desc">Автоматизировали и оптимизировали ключевые бизнес-процессы: закупки, продажи, склад, финансы и бухгалтерия. Упростили рутину, ускорили работу персонала.</p>
+                            <h3 class="experience__card-title">Significantly reduces staffing costs</h3>
                         </div>
                         <div class="experience__card">
-                            <h3 class="experience__card-title">6 лет на МП</h3>
-                            <p class="experience__card-desc">У нас собственные бренды, производство и аутсорс. Работаем по FBO и FBS. Знаем все нюансы ведения учета нескольких ЛК в одной системе.</p>
+                            <h3 class="experience__card-title">Easily integrates with your current systems</h3>
+                        </div>
+                        <div class="experience__card experience__card--wide">
+                            <h3 class="experience__card-title">Scales effortlessly as your business grows</h3>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -271,12 +229,12 @@
 
     <section class="services section-light-bg " id="services">
         <div class="container">
-            <h2 class="section-title">Список основных доработок</h2>
+            <h2 class="section-title">What QUIBOT Can Do</h2>
             <div class="services__container">
                 <div class="services__list">
                     <div class="service-item" data-service="nomenclature">
                         <button class="service-button">
-                            Номенклатура
+                            Process requests
                             <span class="arrow">›</span>
                         </button>
                         <div class="service-content">
@@ -290,7 +248,7 @@
                     </div>
                     <div class="service-item" data-service="production">
                         <button class="service-button">
-                            Производство
+                            Reply via chat/email
                             <span class="arrow">›</span>
                         </button>
                         <div class="service-content">
@@ -304,7 +262,7 @@
                     </div>
                     <div class="service-item" data-service="warehouse">
                         <button class="service-button">
-                            Склад
+                            Send reports
                             <span class="arrow">›</span>
                         </button>
                         <div class="service-content">
@@ -318,7 +276,7 @@
                     </div>
                     <div class="service-item" data-service="sales">
                         <button class="service-button">
-                            Продажи
+                            Manage inventory
                             <span class="arrow">›</span>
                         </button>
                         <div class="service-content">
@@ -332,7 +290,7 @@
                     </div>
                     <div class="service-item" data-service="additional">
                         <button class="service-button">
-                            Финансы
+                            Handle docs
                             <span class="arrow">›</span>
                         </button>
                         <div class="service-content">
@@ -346,7 +304,59 @@
                     </div>
                     <div class="service-item" data-service="api">
                         <button class="service-button">
-                            API
+                            Make calls
+                            <span class="arrow">›</span>
+                        </button>
+                        <div class="service-content">
+                            <div class="service-features">
+                                <p>API для интернет магазинов (Номенклатура, цены, заказы и т.п.)</p>
+                                <p>API для работы с финансами (Расход из кассы, поступление в кассу, перемещение денег)</p>
+                                <p>API для получения информации о контрагенте по ИНН</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-item" data-service="api">
+                        <button class="service-button">
+                            Create proposals
+                            <span class="arrow">›</span>
+                        </button>
+                        <div class="service-content">
+                            <div class="service-features">
+                                <p>API для интернет магазинов (Номенклатура, цены, заказы и т.п.)</p>
+                                <p>API для работы с финансами (Расход из кассы, поступление в кассу, перемещение денег)</p>
+                                <p>API для получения информации о контрагенте по ИНН</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-item" data-service="api">
+                        <button class="service-button">
+                            Track tasks
+                            <span class="arrow">›</span>
+                        </button>
+                        <div class="service-content">
+                            <div class="service-features">
+                                <p>API для интернет магазинов (Номенклатура, цены, заказы и т.п.)</p>
+                                <p>API для работы с финансами (Расход из кассы, поступление в кассу, перемещение денег)</p>
+                                <p>API для получения информации о контрагенте по ИНН</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-item" data-service="api">
+                        <button class="service-button">
+                            Send reminders
+                            <span class="arrow">›</span>
+                        </button>
+                        <div class="service-content">
+                            <div class="service-features">
+                                <p>API для интернет магазинов (Номенклатура, цены, заказы и т.п.)</p>
+                                <p>API для работы с финансами (Расход из кассы, поступление в кассу, перемещение денег)</p>
+                                <p>API для получения информации о контрагенте по ИНН</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-item" data-service="api">
+                        <button class="service-button">
+                            Summarize analytics
                             <span class="arrow">›</span>
                         </button>
                         <div class="service-content">
@@ -595,9 +605,9 @@
                     <p class="footer__copyright">© 2024 1C:Analizator. Все права защищены.</p>
                 </div>
                 <div class="footer__column">
-                    <h4 class="footer__title">Связаться с нами</h4>
-                    <p class="footer__contact">Email: 1C@analizator.mp</p>
-                    <p class="footer__contact">Телефон: +7 (967) 555-05-20</p>
+                    <h4 class="footer__title">Let’s Talk</h4>
+                    <p class="footer__contact">Email: info@quibot.com</p>
+                    <p class="footer__contact">Number: +1 (999) 123-4567</p>
                 </div>
                 <div class="footer__column">
                     <h4 class="footer__title">Соцсети</h4>
