@@ -450,8 +450,8 @@ input, textarea, select {
 }
 
 .hero__logo {
-    min-width: 220px;
-    min-height: 120px;
+    min-width: 480px;
+    min-height: 480px;
     object-fit: contain;
     filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.2));
 }
@@ -567,12 +567,12 @@ input, textarea, select {
     }
     
     .hero__logo-container {
-        width: 120px;
-        height: 120px;
+        width: 360px;
+        height: 360px;
     }
     
     .hero__logo {
-        width: 80px;
-        height: 80px;
+        width: 180px;
+        height: 180px;
     }
 }

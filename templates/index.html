@@ -69,35 +69,9 @@
                     <a href="https://t.me/Yakushev_Mikhail" class="btn btn--primary hero__btn">Watch Demo</a>
                 </div>
                 <div class="hero__images">
-                    <div class="hero__icon-container" id="icon1">
-                        <img src="{{ url_for('static', filename='img/finance.png') }}" alt="" class="hero__icon">
-                    </div>
-                    <div class="hero__icon-container" id="icon2">
-                        <img src="{{ url_for('static', filename='img/Warehouse .png') }}" alt="" class="hero__icon">
-                    </div>
-                    <div class="hero__icon-container" id="icon3">
-                        <img src="{{ url_for('static', filename='img/Integrations.png') }}" alt="" class="hero__icon">
-                    </div>
                     <div class="hero__logo-container" id="center-logo">
-                        <img src="{{ url_for('static', filename='img/logo.png') }}" alt="1C:Analizator" class="hero__logo">
+                        <img src="{{ url_for('static', filename='img/AI_Brain.png') }}" alt="1C:Analizator" class="hero__logo">
                     </div>
-                    <div class="hero__icon-container" id="icon4">
-                        <img src="{{ url_for('static', filename='img/QR.png') }}" alt="" class="hero__icon">
-                    </div>
-                    <div class="hero__icon-container" id="icon5">
-                        <img src="{{ url_for('static', filename='img/Gear.png') }}" alt="" class="hero__icon">
-                    </div>
-                    <div class="hero__icon-container" id="icon6">
-                        <img src="{{ url_for('static', filename='img/account.png') }}" alt="" class="hero__icon">
-                    </div>
-                    <svg class="hero__lines" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                        <line id="line1" x1="0" y1="0" x2="0" y2="0" stroke="rgba(255,255,255,0.6)" stroke-width="2" />
-                        <line id="line2" x1="0" y1="0" x2="0" y2="0" stroke="rgba(255,255,255,0.6)" stroke-width="2" />
-                        <line id="line3" x1="0" y1="0" x2="0" y2="0" stroke="rgba(255,255,255,0.6)" stroke-width="2" />
-                        <line id="line4" x1="0" y1="0" x2="0" y2="0" stroke="rgba(255,255,255,0.6)" stroke-width="2" />
-                        <line id="line5" x1="0" y1="0" x2="0" y2="0" stroke="rgba(255,255,255,0.6)" stroke-width="2" />
-                        <line id="line6" x1="0" y1="0" x2="0" y2="0" stroke="rgba(255,255,255,0.6)" stroke-width="2" />
-                    </svg>
                 </div>
             </div>
         </div>
@@ -139,7 +113,7 @@
                         </li>
                     </ol>
                     <div class="stages__result">
-                        <h3 class="stages__result-title">Full develop usually within<span class="highlighted-number">7–14</span> days.</h3>
+                        <h3 class="stages__result-title">Full develop usually within<span class="highlighted-number">7</span> days.</h3>
                     </div>
                 </div>
                 <div class="stages__img">
@@ -198,30 +172,47 @@
     <section class="experience section-dark-bg" id="experience">
         <div class="container">
             <div class="experience__wrapper">
-                <p class="experience__subtitle">Why QUIBOT Outperforms Human Staff</p>
+                <p class="experience__subtitle">Никакой теории — только проверенные решения, через которые мы прошли сами.</p>
                 <div class="experience__container">
-                    <div class="experience__image">
-                        <div class="experience__image-placeholder">
-                            <img src="{{ url_for('static', filename='img/team_work.png') }}" alt="Наша команда за работой" class="experience__img">
+                    <div class="experience__stats">
+                        <div class="experience__stat-item">
+                            <div class="experience__stat-number ">10+</div>
+                            <div class="experience__stat-text">лет на рынке</div>
                         </div>
-                    </div>
-                    <div class="experience__content">
+                        <div class="experience__stat-item">
+                            <div class="experience__stat-number">650+</div>
+                            <div class="experience__stat-text">завершенных проектов</div>
+                        </div>
                         <div class="experience__card">
                             <h3 class="experience__card-title">Operates 24/7 — no breaks, no sick days</h3>
+                            <div class="experience__card-icon">🕒</div>
                         </div>
                         <div class="experience__card">
-                            <h3 class="experience__card-title">>Eliminates human errors and data loss</h3>
+                            <h3 class="experience__card-title">Eliminates human errors and data loss</h3>
+                            <div class="experience__card-icon">🧠</div>
                         </div>
+                    </div>
+                    <div class="experience__cards">
+                        <div class="experience__stat-item">
+                            <div class="experience__stat-number">1500+</div>
+                            <div class="experience__stat-text">штатных ассессоров</div>
+                        </div>
+
                         <div class="experience__card">
                             <h3 class="experience__card-title">Significantly reduces staffing costs</h3>
+                            <div class="experience__card-icon">💰</div>
                         </div>
                         <div class="experience__card">
                             <h3 class="experience__card-title">Easily integrates with your current systems</h3>
+                            <div class="experience__card-icon">🔧</div>
                         </div>
-                        <div class="experience__card experience__card--wide">
+                        <div class="experience__card">
                             <h3 class="experience__card-title">Scales effortlessly as your business grows</h3>
+                            <div class="experience__card-icon">🚀</div>
                         </div>
                     </div>
+                </div>
+                <div class="experience__cta">
                 </div>
             </div>
         </div>
@@ -239,10 +230,9 @@
                         </button>
                         <div class="service-content">
                             <div class="service-features">
-                                <p>Хранение дополнительных ШК одного товара для разных МП или ЛК</p>
-                                <p>Хранение и привязка к номенклатуре сертификатов качества</p>
-                                <p>Автоматическая генерация артикулов и ШК с префиксом (Пример: MP000001)</p>
-                                <p>Контроль заполнения необходимых полей при печати этикеток</p>
+                                <p>"I'd like to check the status of my order #45678." → Bot responds with shipping details.</p>
+                                <p>"Please schedule a maintenance visit for next Monday." → Bot logs the request and confirms the appointment.</p>
+                                <p>"Can I reserve a spot for the webinar on July 10?" → Bot checks availability and books the user in.</p>
                             </div>
                         </div>
                     </div>
@@ -253,10 +243,9 @@
                         </button>
                         <div class="service-content">
                             <div class="service-features">
-                                <p>Упрощенное занесение маршрутных листов через сканирование ШК</p>
-                                <p>Указание времени операции в секундах, а не часах в спецификациях</p>
-                                <p>Возможность планировать производство продукции по дням. Отчеты для сравнения плана и факта</p>
-                                <p>Фиксация количества брака по сдельным нарядам по исполнителям/номенклатуре/типу брака</p>
+                                <p>"How much is the delivery fee to New York?" → Bot replies: "Delivery to New York is $15 and takes 2–3 days."</p>
+                                <p>"I forgot my password." → Bot sends a password reset link to the user's email.</p>
+                                <p>"Do you have this product in stock?" → Bot checks inventory and replies instantly.</p>
                             </div>
                         </div>
                     </div>
@@ -267,10 +256,9 @@
                         </button>
                         <div class="service-content">
                             <div class="service-features">
-                                <p>Печать КИЗ и маркировку продавца на одной этикетке</p>
-                                <p>Возможность повторной печати КИЗ</p>
-                                <p>Статусы в перемещении товаров для учета товара в пути</p>
-                                <p>Работа с КИЗ принадлежащим разным ЮЛ</p>
+                                <p>Bot sends a daily sales report to the manager every morning at 9 AM.</p>
+                                <p>Bot generates a weekly performance summary and emails it to the team.</p>
+                                <p>Bot compiles a customer feedback report and posts it to Slack.</p>
                             </div>
                         </div>
                     </div>
@@ -281,10 +269,9 @@
                         </button>
                         <div class="service-content">
                             <div class="service-features">
-                                <p>Полный цикл работы с FBS на WB</p>
-                                <p>Поставки по схеме FBO на WB и Ozon</p>
-                                <p>Автоматическая загрузка отчета реализации WB и Ozon</p>
-                                <p>Расчет потребности отгрузок на WB</p>
+                                <p>Bot alerts when stock for a product drops below 10 units.</p>
+                                <p>Bot automatically updates inventory when a new delivery is received.</p>
+                                <p>Bot responds to "Check stock for item #123" with real-time data.</p>
                             </div>
                         </div>
                     </div>
@@ -295,10 +282,9 @@
                         </button>
                         <div class="service-content">
                             <div class="service-features">
-                                <p>Автоматическая выгрузка платежных поручений в банк</p>
-                                <p>Автоматическая загрузка банковских выписок</p>
-                                <p>Автоматическое разнесение платежей по статьям расхода</p>
-                                <p>Подключение к банкам через разные прокси серверы</p>
+                                <p>Bot automatically processes invoices and extracts key information for accounting.</p>
+                                <p>Bot generates contracts based on templates and client specifications.</p>
+                                <p>Bot organizes documents by category and sends them to appropriate departments.</p>
                             </div>
                         </div>
                     </div>
@@ -309,9 +295,9 @@
                         </button>
                         <div class="service-content">
                             <div class="service-features">
-                                <p>API для интернет магазинов (Номенклатура, цены, заказы и т.п.)</p>
-                                <p>API для работы с финансами (Расход из кассы, поступление в кассу, перемещение денег)</p>
-                                <p>API для получения информации о контрагенте по ИНН</p>
+                                <p>Bot initiates a reminder call to a client before their scheduled meeting.</p>
+                                <p>Bot performs follow-up calls to customers who haven't completed their orders.</p>
+                                <p>Bot makes an automated call to report a system outage to the IT team.</p>
                             </div>
                         </div>
                     </div>
@@ -322,9 +308,9 @@
                         </button>
                         <div class="service-content">
                             <div class="service-features">
-                                <p>API для интернет магазинов (Номенклатура, цены, заказы и т.п.)</p>
-                                <p>API для работы с финансами (Расход из кассы, поступление в кассу, перемещение денег)</p>
-                                <p>API для получения информации о контрагенте по ИНН</p>
+                                <p>Bot drafts a business proposal based on selected services and client input.</p>
+                                <p>Bot customizes a commercial offer PDF and sends it for approval.</p>
+                                <p>Bot generates pricing options for a new project and shares them via email.</p>
                             </div>
                         </div>
                     </div>
@@ -335,9 +321,9 @@
                         </button>
                         <div class="service-content">
                             <div class="service-features">
-                                <p>API для интернет магазинов (Номенклатура, цены, заказы и т.п.)</p>
-                                <p>API для работы с финансами (Расход из кассы, поступление в кассу, перемещение денег)</p>
-                                <p>API для получения информации о контрагенте по ИНН</p>
+                                <p>Bot adds "Prepare monthly report" to the task list with a deadline.</p>
+                                <p>Bot checks off completed tasks as team members report progress.</p>
+                                <p>Bot sends a summary of overdue tasks every Friday.</p>
                             </div>
                         </div>
                     </div>
@@ -348,9 +334,9 @@
                         </button>
                         <div class="service-content">
                             <div class="service-features">
-                                <p>API для интернет магазинов (Номенклатура, цены, заказы и т.п.)</p>
-                                <p>API для работы с финансами (Расход из кассы, поступление в кассу, перемещение денег)</p>
-                                <p>API для получения информации о контрагенте по ИНН</p>
+                                <p>Bot sends a reminder 30 minutes before a scheduled call.</p>
+                                <p>Bot notifies the user daily at 8 AM about top 3 tasks.</p>
+                                <p>Bot reminds a client to submit payment before invoice due date.</p>
                             </div>
                         </div>
                     </div>
@@ -361,9 +347,9 @@
                         </button>
                         <div class="service-content">
                             <div class="service-features">
-                                <p>API для интернет магазинов (Номенклатура, цены, заказы и т.п.)</p>
-                                <p>API для работы с финансами (Расход из кассы, поступление в кассу, перемещение денег)</p>
-                                <p>API для получения информации о контрагенте по ИНН</p>
+                                <p>Bot provides a summary of weekly website traffic: "2,350 visits, +12% from last week."</p>
+                                <p>Bot analyzes sales trends and highlights top-selling products.</p>
+                                <p>Bot sends a short summary of social media engagement stats every Monday.</p>
                             </div>
                         </div>
                     </div>
@@ -394,7 +380,7 @@
             <a href="/service/" class="btn btn--primary service-modal__btn">Заказать услугу</a>
         </div>
     </section>
-
+<!-- 
     <section class="cta section-dark-bg" id="contact">
         <div class="container">
             <div class="cta__wrapper">
@@ -484,9 +470,9 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
-    <!-- Блок с тарифами -->
+    <!-- Блок с тарифами
     <section class="pricing section-light-bg " id="pricing">
         <div class="container">
             <h2 class="pricing__title">Тарифные планы</h2>
@@ -531,7 +517,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Reviews Section -->
     <!-- <section class="reviews">
