@@ -74,7 +74,7 @@ input, textarea, select {
     font-weight: 700;
     color: #000000;
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
 }
 
 .white__title{
@@ -535,6 +535,12 @@ input, textarea, select {
 }
 
 @media (max-width: 480px) {
+
+    .experience__cards{
+        display: block;
+    }
+
+
     .hero__title {
         font-size: 24px;
     }
@@ -567,12 +573,18 @@ input, textarea, select {
     }
     
     .hero__logo-container {
-        width: 360px;
-        height: 360px;
+        width: 280px;
+        height: 280px;
+        opacity: 0.8;
     }
     
     .hero__logo {
-        width: 180px;
-        height: 180px;
+        min-width: 270px;
+        min-height: 270px;
     }
+
+    .stages__photo{
+        display: none;
+    }
+    
 }
