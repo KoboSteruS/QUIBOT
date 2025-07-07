@@ -334,12 +334,16 @@
 
 .experience__card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(45, 125, 122, 0.3);
+    box-shadow: 0 8px 25px rgba(96, 101, 163, 0.3);
 }
 
 .experience__card-icon {
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
 }
 
 .experience__card-title {
@@ -394,10 +398,17 @@
     text-transform: none;
 }
 
+
+.experience__card-img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+}
+
 .experience__cta .btn-primary:hover {
-    background: #14b8a6;
+    background: #7a80d6;
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(45, 212, 191, 0.3);
+    box-shadow: 0 5px 15px rgba(141, 147, 224, 0.3);
 }
 
 /* Media queries for experience section */
